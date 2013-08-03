@@ -43,3 +43,34 @@
   display: block;
   float: center;
 }
+@font-face
+{
+  font-family: customFont;
+  src: url(Sketch_Block.ttf);
+}  
+.banner {
+   font-family: customFont;
+   margin: 0px;
+   padding-top: 80px;
+   padding-bottom: 50px;
+   text-align: center;
+   color: #ffffff;
+}
+.carousel-green {
+	background-color: #41a128;
+}
+.carousel-blue {
+	background-color: #65a6d1;
+}
+
+table.wide, table.wide tr, table.wide td {
+	font-size:15px;
+	background-color:white;
+}
+
+.picture {
+	background-image: url("../../images/profile-image.jpg");
+	height: 250px;
+	width: 250px;
+	margin-bottom: 10px;
+}
