@@ -33,10 +33,10 @@
 			</tr>
 			<tr height="80px">
 			<td style="font-size:60px; border-right: 2px solid">
-			<b>69%</b>
+			<b><?=ceil(($money / $studentinfo['targetmoney']) * 100)?>%</b>
 			</td>
 			<td style="font-size:35px">
-			<b>Php 10,000</b>
+			<b>Php <?=$studentinfo['targetmoney'] - $money?></b>
 			</td>
 			</tr>
 			</table>
