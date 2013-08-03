@@ -19,4 +19,15 @@ class Viewstudentdetails_model extends Base_Model {
 			}
 		return false;
 	}
+	
+	public function saveinstantdonation($amount, $studentid) {
+		$paymentinsert = 'insert into payments(amount) values('.$amount.');';
+		$this->db->query($paymentinsert);
+		$getpaymentid = 'select paymentid from payments where amount = '.$amount.' order by paymentid desc limit 1';
+		$getpaymentid = $this->db->query($getpaymentid);
+		$getpaymentid = $getpaymentid->result_array();
+		$paymentid = $getpaymentid[0]['paymentid'];
+		$instantcashdonationsinsert = 'insert into instantcashdonations(studentid, paymentid) values('.$studentid.', '.$paymentid.');';
+		$this->db->query($instantcashdonationsinsert);
+	}
 }
