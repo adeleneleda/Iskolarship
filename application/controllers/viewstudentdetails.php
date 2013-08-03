@@ -41,4 +41,8 @@ class Viewstudentdetails extends Main_Controller {
 		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid'));
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 239fffe683f3817b7c708a5790851a014d7ec81f

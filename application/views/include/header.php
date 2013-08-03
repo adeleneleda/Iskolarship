@@ -62,6 +62,7 @@
 							<a class="brand" href="<?= base_url('')?>"><i class="icon-home2" style="padding:4px; padding-right:8px"></i>Welcome!</a>
 							<div class="nav-collapse">
 								<ul class="nav">
+									<li id="infinityedge"><a href="<?= base_url('sponsorhomepage')?>" style="height:23px;">Dan</a></li>
 									<li id="sr"><a href="<?= base_url('studentrankings')?>" style="height:23px;">Student Rankings</a></li>
 									<li id="cs"><a href="<?= base_url('coursestatistics')?>" style="height:23px;">Course Statistics</a></li>
 									<li id="et"><a href="<?= base_url('eligibilitytesting')?>" style="height:23px;">Eligibility Checking</a></li>
