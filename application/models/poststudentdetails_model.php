@@ -21,6 +21,13 @@ class PostStudentDetails_Model extends Base_Model {
 		return $results;
     }
     
+    function get_banks()
+    {
+        $results = $this->db->query('SELECT bankid, name FROM banks;');
+		$results = $results->result_array();
+		return $results;
+    }
+    
     function save_studentdetails($details)
     {
         foreach ($details as &$value)
@@ -36,9 +43,8 @@ class PostStudentDetails_Model extends Base_Model {
         $pid = $pid->result_array();
         $pid = $pid[0]['personid'];
         $this->db->query('INSERT INTO users(personid, login, password)' . ' values(' . $pid . ', ' . $details['username'] . ', ' . $details['password'] . ');');
-        $this->db->query('INSERT INTO students(yearlevel, personid, programid, familyincome, reasonforneedingscholarship, targetmoney)' . 
-                        ' values(' . $details['yearlevel'] . ', ' . $pid . ', ' . $details['program'] . ', ' . $details['familyincome'] . ', ' . 
-                        $details['reason'] . ', ' . $details['targetmoney'] . ');');
+        $this->db->query('INSERT INTO students(yearlevel, personid, programid, familyincome, reasonforneedingscholarship, targetmoney, bankid, accountnumber)'                . ' values(' . $details['yearlevel'] . ', ' . $pid . ', ' . $details['program'] . ', ' . $details['familyincome'] . ', ' . 
+                        $details['reason'] . ', ' . $details['targetmoney'] . ', ' . $details['bank'] . ', ' . $details['accountnumber'] . ');');
         $sid = $this->db->query('SELECT studentid FROM students where personid = ' . $pid . ';');
         $sid = $sid->result_array();
         $sid = $sid[0]['studentid'];
