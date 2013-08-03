@@ -1,23 +1,108 @@
+<div class="span12" align="center">
  <?$fullname = array($studentinfo['firstname'], $studentinfo['middlename'], $studentinfo['lastname'], $studentinfo['namesuffix']);?>
-   	<div class="row">   
-		<div class="well" align="center">
-			<span>
-				<img src="<?= base_url('images/pic.png')?>" style="float:left; padding-left:20px;"/>
-			</span>
-			<span>
-			Name: <?=implode($fullname, " ")?><br/>
-			Sex: <?=($studentinfo['sex'] == 1 ? 'Female' : 'Male')?><br/>
-			Birthday: <?=$studentinfo['birthday']?><br/>
-			Degree Program: <?=$studentinfo['name']?><br/>
-			Family Income: <?=$studentinfo['familyincome']?><br/>
-			Reason For Needing Scholarship: <?=$studentinfo['reasonforneedingscholarship']?><br/>
-			Target Money: <?=$studentinfo['targetmoney']?><br/>
-			<form method="post" action="<?= base_url('viewstudentdetails/downloadfile')?>">
-				<input type = "hidden" name = "filename" value = "sample.pdf"/>
-				<input type = "hidden" name = "filepath" value = "C:\Users\adelin\Desktop\pandesal.pdf"/>
-				<input type="submit" value = "Download"/>
-			</form>
-			</span>
+	<div class="row" style="width:95%">
+		<div class="well span5" align="center" style="text-align:center">
+			<div class="well" style="background-color:white">
+			<img src="<?= base_url('images/pic.png')?>" style="padding-left:20px;"/>
+			</div>
+			<div class="well" style="background-color:white">
+			Description:<br/>
+			I am beautiful, no matter what they say
+			</div>
 		</div>
-	</div>			
+		<div class="well span5">
+			<table style="width:100%; text-align:center">
+			<tr>
+			<td style="text-align:left">
+			<h3>Donation Information</h3>
+			</td>
+			<td style="text-align:right">
+			Date posted: January 1, 1970
+			</td>
+			</tr>
+			</table>
+			<br/>
+			<table style="width:100%; text-align:center">
+			<tr>
+			<td style="border-right: 2px solid">
+			<b>Percent Funded</b>
+			</td>
+			<td>
+			<b>Peso donations to go</b>
+			</td>
+			</tr>
+			<tr height="80px">
+			<td style="font-size:60px; border-right: 2px solid">
+			<b>69%</b>
+			</td>
+			<td style="font-size:35px">
+			<b>Php 10,000</b>
+			</td>
+			</tr>
+			</table>
+			<br/>
+			<div class="progress" style="border:2px solid">
+				<div style="width: 69%;" class="bar bar-custom"></div>
+			</div>
+			<table style="width:100%; text-align:center">
+			<tr>
+			<td>
+			<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;Donation Amount</b>
+			<br/></td>
+			<td rowspan="2">
+			<a href="#/view-studentdetails" class="btn btn-custom btn-xlarge" >Fund Education</a>
+			</td>
+			</tr>
+			<tr>
+			<td style="font-size:35px;">
+			<b>Php</b>&nbsp;<input type="text" style="width:150px; height: 50px; font-size:30px">
+			</td>
+			
+			</tr>
+			</table>
+		</div>
+		<div>
+			<h3>Student's Information</h3>
+			<hr>
+			<table class="wide table table-bordered tablesorter tablesorter-bootstrap table-striped table-hover">
+				<tr>
+				<td width="25%"><b>Name: </b></td>
+				<td><?=implode($fullname, " ")?><br/></td>
+				</tr>
+				<tr>
+				<td><b>Sex: </b></td>
+				<td><?=($studentinfo['sex'] == 1 ? 'Female' : 'Male')?><br/></td>
+				</tr>
+				<tr>
+				<td><b>Birthday: </b></td>
+				<td><?=$studentinfo['birthday']?><br/></td>
+				</tr>
+				<tr>
+				<td><b>Degree Program: </b></td>
+				<td><?=$studentinfo['name']?><br/></td>
+				</tr>
+				<tr>
+				<td><b>Family Income: </b></td>
+				<td><?=$studentinfo['familyincome']?><br/></td>
+				</tr>
+				<tr>
+				<td><b>Reason For Needing Scholarship: </b></td>
+				<td><?=$studentinfo['reasonforneedingscholarship']?><br/></td>
+				</tr>
+				<tr>
+				<td><b>Target Money: </b></td>
+				<td><?=$studentinfo['targetmoney']?><br/></td>
+				</tr>
+			</table>
+			<div width="100%" align="center">
+				<form method="post" action="<?= base_url('viewstudentdetails/downloadfile')?>">
+					<input type = "hidden" name = "filename" value = "sample.pdf"/>
+					<input type = "hidden" name = "filepath" value = "C:\Users\adelin\Desktop\pandesal.pdf"/>
+					<input type="submit" value = "Download CSV" class="btn btn-large btn-custom"/>
+				</form>
+			</div>
+			<br/>
+		</div>
+	</div>	
 </div>
