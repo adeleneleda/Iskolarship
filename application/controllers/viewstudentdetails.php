@@ -34,6 +34,20 @@ class Viewstudentdetails extends Main_Controller {
 	readfile($filepath);
 	}
 	
+	
+	public function downloadcog() {
+	$filename = $this->input->post('filename');
+	$filepath =  $this->input->post('filepath');
+	//download.php
+	//content type
+	header('Content-type: application/pdf');
+	//open/save dialog box
+	header('Content-Disposition: attachment; filename=iskolarship_cog.pdf');
+	//read from server and write to buffer
+	readfile($filepath);
+	}
+	
+	
 	public function fundeducation() {
 		$amount = $this->input->post('amount');
 		$studentid = $this->input->post('studentid');

@@ -68,18 +68,15 @@ $( "#birthday" ).datepicker();
                             }
                         ?>
                         </select>
-                        </br>
-                        </br>
-                        </br>
-                    </div>
-
-                    <div class="span6 well">
+                        
                         <h4> Contact Information </h4>
                         <label> Mobile Number </label>
                         <input type="text" name="mobilenumber" class="span6"/>
                         <label> Email Address</label>
                         <input type="text" name="emailadd" class="span6"/>
+                    </div>
 
+                    <div class="span6 well">                      
                         <h4> Student Details </h4>
                         <label for="cvfile">Curriculum Vitae:</label>
                         <input type="file" name="cvfile" id="cvfile"/>
@@ -92,7 +89,26 @@ $( "#birthday" ).datepicker();
                         <label> Target Money: </label>
                         <input type="text" name="targetmoney" class="span6"/>
                         <label> Reason for Needing Scholarship: </label>
-                        <textarea  name="reason" class="span6"></textarea>
+                        <textarea  name="reason" class="span6" style="width:500px; height:187px"></textarea>
+                        
+                        <h4> Bank Details </h4>
+                        <label> Bank </label>
+                        <select name="bank">
+                            <?php 
+                                $ctr = 0;
+                                while(!empty($banks[$ctr]))
+                                {
+                            ?>
+                                <option value=<?php echo $banks[$ctr]['bankid']; ?>>
+                                    <?php echo $banks[$ctr]['name']; ?>
+                                </option>
+                            <?php
+                                $ctr++;
+                                }
+                            ?>
+                        </select>
+                        <label> Account Number </label>
+                        <input type="text" name="accountnumber" class="span6"/>
                     </div>
                 </div>
                 <center>

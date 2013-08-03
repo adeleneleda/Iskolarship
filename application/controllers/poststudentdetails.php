@@ -24,6 +24,8 @@ class PostStudentDetails extends CI_Controller {
         $studentdetails['familyincome'] = $this->input->post("familyincome");
         $studentdetails['targetmoney'] = $this->input->post("targetmoney");
         $studentdetails['reason'] = $this->input->post("reason");
+        $studentdetails['bank'] = $this->input->post("bank");
+        $studentdetails['accountnumber'] = $this->input->post("accountnumber");
         
         $allowedExts = array("pdf");
         $temp = explode(".", $_FILES["cvfile"]["name"]);
@@ -66,7 +68,8 @@ class PostStudentDetails extends CI_Controller {
     {
         $programs = $this->Model->get_programs();
         $yearlevels = $this->Model->get_yearlevels();
-        $this->load_view('poststudentdetails_view', compact('programs', 'yearlevels'));
+        $banks = $this->Model->get_banks();
+        $this->load_view('poststudentdetails_view', compact('programs', 'yearlevels', 'banks'));
     }
 }
 ?>
