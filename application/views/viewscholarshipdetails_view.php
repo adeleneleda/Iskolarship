@@ -91,11 +91,15 @@
 	</table>
 	</div>
 	<br/>
-	<center>
-	<form method="post" action="<?= base_url('viewscholarshipdetails/applyforscholarship')?>">
+	<form method="post" action="<?= base_url('viewscholarshipdetails/applyforscholarship')?>" enctype="multipart/form-data">
 		<input type="hidden" name = "scholarshipid" value = "<?=$scholarshipid?>"/>
+		<label for="reqtfile"><h4>Requirements</h4></label>
+		<input type="file" name="reqtfile" id="reqtfile"/>	
+		<br/><br/>
+		<center>
 		<input type="submit" value = "Apply"/>
+		</center>
 	</form>
-	</center>
+	
 </div>
 </div>
