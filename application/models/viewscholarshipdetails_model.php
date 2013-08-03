@@ -19,7 +19,10 @@ class VIewscholarshipdetails_model extends Base_Model {
   }
 
 	public function applyforscholarship($scholarshipid) {
-		
+		//Get who's logged in
+		$studentid = 1;
+		$query = 'insert into scholarshipapplications(scholarshipid, studentid) values('.$scholarshipid.', '.$studentid.');';
+		$this->db->query($query);
 	}
 	
 }

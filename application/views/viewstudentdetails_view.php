@@ -1,6 +1,4 @@
- 
-   <?$fullname = array($studentinfo['firstname'], $studentinfo['middlename'], $studentinfo['lastname'], $studentinfo['namesuffix']);?>
-
+ <?$fullname = array($studentinfo['firstname'], $studentinfo['middlename'], $studentinfo['lastname'], $studentinfo['namesuffix']);?>
    	<div class="row">   
 		<div class="well" align="center">
 			<span>
