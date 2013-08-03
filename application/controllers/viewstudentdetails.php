@@ -16,9 +16,10 @@ class Viewstudentdetails extends Main_Controller {
 		$studentid = $this->input->post('studentid');
 		$studentid = 1;
 		$studentinfo = $this->Model->getstudentinfo($studentid);
+		$money = $this->Model->gettotalmoney($studentid);
 		//print_r($studentinfo);
 		//die();
-		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid'));
+		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid', 'money'));
 	}
 	
 	public function downloadfile() {
@@ -38,11 +39,8 @@ class Viewstudentdetails extends Main_Controller {
 		$studentid = $this->input->post('studentid');
 		$this->Model->saveinstantdonation($amount, $studentid);
 		$studentinfo = $this->Model->getstudentinfo($studentid);
-		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid'));
+		$money = $this->Model->gettotalmoney($studentid);
+		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid', 'money'));
 	}
 	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 239fffe683f3817b7c708a5790851a014d7ec81f
