@@ -17,7 +17,7 @@
 			<h3>Donation Information</h3>
 			</td>
 			<td style="text-align:right">
-			Date posted: January 1, 1970
+			&nbsp;
 			</td>
 			</tr>
 			</table>
@@ -44,6 +44,8 @@
 			<div class="progress" style="border:2px solid">
 				<div style="width: 69%;" class="bar bar-custom"></div>
 			</div>
+			<form method="post" action="<?= base_url('viewstudentdetails/fundeducation')?>">
+			<input type="hidden" name = "studentid" value = "<?=$studentid?>">
 			<table style="width:100%; text-align:center">
 			<tr>
 			<td>
@@ -51,18 +53,21 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;Donation Amount</b>
 			<br/></td>
 			<td rowspan="2">
-			<a href="#/view-studentdetails" class="btn btn-custom btn-xlarge" >Fund Education</a>
+			<input type = "submit" class="btn btn-custom btn-xlarge" value = "Fund Education"/>
+			
 			</td>
 			</tr>
 			<tr>
 			<td style="font-size:35px;">
-			<b>Php</b>&nbsp;<input type="text" style="width:150px; height: 50px; font-size:30px">
+			<b>Php</b>&nbsp;<input type="text" name = "amount" style="width:150px; height: 50px; font-size:30px">
 			</td>
 			
 			</tr>
 			</table>
+			</form>
 		</div>
-		<div>
+		<div class="well span12" style="width:91%;">
+			<div style="width:80%;">
 			<h3>Student's Information</h3>
 			<hr>
 			<table class="wide table table-bordered tablesorter tablesorter-bootstrap table-striped table-hover">
@@ -103,6 +108,7 @@
 				</form>
 			</div>
 			<br/>
+			</div>
 		</div>
 	</div>	
 </div>

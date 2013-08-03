@@ -1,6 +1,7 @@
 
-<div class="row">
+<div class="span12">
 <div class="well">
+	<img src="<?= base_url("images/globe.jpg")?>"/>
 	<h1><?=$scholarshipinfo['title']?></h1>
 	<hr/>
 	<h4>Scholarship Information</h4>

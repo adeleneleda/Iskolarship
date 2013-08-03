@@ -1,6 +1,6 @@
 <?php
 require_once('base_model.php');
-class VIewscholarshipdetails_model extends Base_Model {
+class Viewscholarshipdetails_model extends Base_Model {
    public function __construct()
    {
       parent::__construct();
