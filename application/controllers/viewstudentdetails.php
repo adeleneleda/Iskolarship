@@ -18,7 +18,7 @@ class Viewstudentdetails extends Main_Controller {
 		$studentinfo = $this->Model->getstudentinfo($studentid);
 		//print_r($studentinfo);
 		//die();
-		$this->load_view('viewstudentdetails_view', compact('studentinfo'));
+		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid'));
 	}
 	
 	public function downloadfile() {
@@ -31,6 +31,14 @@ class Viewstudentdetails extends Main_Controller {
 	header('Content-Disposition: attachment; filename=iskolarship.pdf');
 	//read from server and write to buffer
 	readfile($filepath);
+	}
+	
+	public function fundeducation() {
+		$amount = $this->input->post('amount');
+		$studentid = $this->input->post('studentid');
+		$this->Model->saveinstantdonation($amount, $studentid);
+		$studentinfo = $this->Model->getstudentinfo($studentid);
+		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid'));
 	}
 	
 }
