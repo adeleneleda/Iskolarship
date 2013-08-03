@@ -6,6 +6,17 @@ class Viewstudentdetails_model extends Base_Model {
       parent::__construct();
    }
    
+   public function gettotalmoney($studentid) {
+		$query = "select sum(amount) as totalmoney from instantcashdonations join payments using (paymentid) where studentid = ".$studentid.";";
+		$results = $this->db->query($query);
+		if($results->num_rows() > 0)
+			{
+				$temp = $results->result_array();
+				return $temp[0]['totalmoney'];
+			}
+		return false;
+   }
+   
 	public function getstudentinfo($studentid) {
 		$query = "SELECT lastname, firstname, middlename, namesuffix, 
 		birthday, sex, programs.name, yearlevel, familyincome, 
