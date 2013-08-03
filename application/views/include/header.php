@@ -9,6 +9,25 @@
 
 		<title>UP DCS Student Profiling System</title>
 
+		<!-- import the bootstrap stylesheets-->
+		<link href="<?= base_url('assets/bootstrap/css/bootstrap.css') ?>" rel="stylesheet"/>
+		<link href="<?= base_url('assets/bootstrap/css/bootstrap-responsive.css') ?>" rel="stylesheet"/>
+		<!--import font-awesome-->
+		<link href="<?= base_url('assets/font-awesome/font-awesome.min.css') ?>" rel="stylesheet"/>
+		<!-- import the css styles we created in the /css/ folder-->
+		<link href="<?= base_url('assets/css/styles.css') ?>" rel="stylesheet"/>
+		<!-- import the jquery, bootstrap, and Angular JS libraries-->
+		<script src="<?= base_url('assets/jquery-1.9.1.js') ?>"> </script>
+		<script src="<?= base_url('assets/bootstrap/js/bootstrap.js') ?>"></script>
+		<!-- import the javascript code we created in the /js/ folder-->
+		<script src="/js/app.js" type="text/javascript"></script>
+		<script src="/js/message.js" type="text/javascript"></script>
+		<script src="/js/directives.js" type="text/javascript"></script>
+		<script src="/js/exer.js" type="text/javascript"></script>
+		<script src="/js/meli.js" type="text/javascript"></script>
+		<script src="/js/dan.js" type="text/javascript"></script>
+		<script src="/js/adelen.js" type="text/javascript"> </script>
+		<!--
 		<script type="text/javascript" src="<?= base_url('assets/js/jquery-1.8.3.js') ?>"></script>
 		<link href="<?= base_url('assets/css/font-awesome.css') ?>" rel="stylesheet">
 		<link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -23,36 +42,15 @@
 		<script type="text/javascript" src="<?= base_url('assets/js/jquery.tablesorter.js') ?>"></script>
 		<script type="text/javascript" src="<?= base_url('assets/js/jquery.tablesorter.widgets.js') ?>"></script>
 		<script type="text/javascript" src="<?= base_url('assets/js/jquery.tablesorter.pager.js') ?>"></script>
-		
+		-->
 		<link rel="shortcut icon" href="<?= base_url('images/favicon.ico')?>" >
 		
-		<?php if (isset($update_statistics)) { // include Team C headers ?>
-			<link href="<?= base_url('assets/css/update_statistics.css') ?>" rel="stylesheet" type="text/css" />
-			<script type="text/javascript" src="<?= base_url('assets/js/update_statistics_sidebar.js') ?>"></script>
-			<script type="text/javascript" src="<?= base_url('assets/js/jquery.form.js') ?>"></script>
-			<script type="text/javascript">
-				var base_url = "<?= base_url(''); ?>";
-				var site_url = "<?= site_url(''); ?>";
-			</script>
-		<?php } ?>
 		<script type="text/javascript" src="<?= base_url('assets/js/jquery.qtip-1.0.0-rc3.min.js') ?>"></script>
 	</head>
 	<body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
 		<div class="container">
-		<br/>
-		<header class="jumbotron subhead" id="overview">
 			<div class="row">   
-				<div class="well" align="center">
-					<span>
-						<a href="<?= base_url('')?>"><img src="<?= base_url('images/logo.png')?>" align="middle" alt="Logo" /></a>
-					</span>
-					<span>
-						<h1>UP DCS Student Profiling System</h1> 
-						<p class="lead">Department of Computer Science, UP Diliman</p>
-						<a id="focus_here" name="focus_here"></a>
-					</span>
-				</div>
-				
+				<br/>
 				<div class="navbar">
 					<div class="navbar-inner">
 						<div class="container" style="width: auto;">
@@ -74,5 +72,11 @@
 						</div>
 					</div><!-- /navbar-inner -->
 			  </div><!-- /navbar -->
+			  <div class="well" align="center">
+					<span>
+						<h1>Iskolarship</h1> 
+						<p class="lead">Crowd-funded education for college students</p>
+						<a id="focus_here" name="focus_here"></a>
+					</span>
+				</div>
 			</div>
-		</header>

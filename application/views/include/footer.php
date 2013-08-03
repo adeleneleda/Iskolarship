@@ -1,9 +1,8 @@
-	</div>
-		<hr>
-		<footer style="text-align:center" id="footer">
-			<p>UP Diliman - Department of Computer Science</p>
-			<p>Copyright &copy; 2013. All Rights Reserved.</p>
+		</div>
+		<footer style="text-align:center" class="modal-footer"><br/>
+		  <p>College of Engineering</p>
+		  <p>University of the Philippines - Diliman</p>
+		  <p>Copyright 2013</p><br/>
 		</footer>
-		</br>
 	</body>
 </html>
