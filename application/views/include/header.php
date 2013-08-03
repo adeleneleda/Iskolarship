@@ -7,7 +7,7 @@
 		<meta name="keywords" content="">
 		<meta name="author" content="">
 
-		<title>UP DCS Student Profiling System</title>
+		<title>Iskolarship</title>
 
 		<!-- import the bootstrap stylesheets-->
 		<link href="<?= base_url('assets/bootstrap/css/bootstrap.css') ?>" rel="stylesheet"/>
@@ -47,11 +47,37 @@
 		
 		<script type="text/javascript" src="<?= base_url('assets/js/jquery.qtip-1.0.0-rc3.min.js') ?>"></script>
 	</head>
-	<body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+	<script>
+	$(document).ready(function(){
+		$("#btn-login").click(login);
+		$("#logout").click(function(){
+			window.location = "<?= base_url("home/logout")?>";
+		});
+		$('#myCarousel').carousel({
+		  interval: 3000
+		});
+		$('#myCarousel2').carousel({
+		  interval: 4000
+		});
+	});
+	
+	function login() {
+		$.ajax({
+			type: "POST",
+			url: "<?= base_url("home/login")?>",
+			data: { username: $("#username").val(), password: $("#password").val() }
+		}).done(function( msg ) {
+			if(msg == "" || msg == null) alert("Invalid username and password combination.");
+			else window.location = "<?= base_url("")?>";
+		});
+	}
+	</script>
+	<body class="preview" style="width:100%;">
 		<div class="container">
 			<div class="row">   
+				<div class="span12">
 				<br/>
-				<div class="navbar">
+				<div class="navbar" style="margin:0px">
 					<div class="navbar-inner">
 						<div class="container" style="width: auto;">
 							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -59,25 +85,45 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</a>
-							<a class="brand" href="<?= base_url('')?>"><i class="icon-home2" style="padding:4px; padding-right:8px"></i>Welcome!</a>
+							<a class="brand" href="<?= base_url('')?>"><i class="icon-book" style="padding:4px; padding-right:8px"></i>Iskolarship</a>
 							<div class="nav-collapse">
 								<ul class="nav">
-									<li id="infinityedge"><a href="<?= base_url('sponsorhomepage')?>" style="height:23px;">Dan</a></li>
-									<li id="sr"><a href="<?= base_url('studentrankings')?>" style="height:23px;">Student Rankings</a></li>
-									<li id="cs"><a href="<?= base_url('coursestatistics')?>" style="height:23px;">Course Statistics</a></li>
-									<li id="et"><a href="<?= base_url('eligibilitytesting')?>" style="height:23px;">Eligibility Checking</a></li>
-									<li id="us"><a href="<?= base_url('updatestatistics')?>" style="height:23px;">Update Statistics</a></li>
-									<li id="ab"><a href="<?= base_url('about')?>" style="height:23px;">About</a></li>
+									<li><a href="<?= base_url('home')?>" class="active">Home</a></li>
+								    <li><a href="<?= base_url('donate')?>">Donate</a></li>
+								    <li><a href="<?= base_url('success')?>">Success Stories</a></li>
+								    <li><a href="<?= base_url('aff')?>">Affiliations</a></li>
+								    <li><a href="<?= base_url('about')?>">About</a></li>
+								</ul>
+								<ul class="nav pull-right">
+								  <?if(empty($username)) {?>
+								  <li class="dropdown"><a href="" data-toggle="dropdown" class="dropdown-toggle"> <i class="icon-user"></i>  Login</a>
+									<div style="padding:20px" class="dropdown-menu">
+										<form>
+										<input id="username" type="text" name="username_id" style="height:30px;margin-top:15px" placeholder="Username"/>
+										<input id="password" type="password" name="password" style="height:30px" placeholder="Password"/>
+										<input id="remember" type="checkbox" name="remember" style="float:left;margin-right:10px"/>
+										<label for="remember" class="string optional">Remember me</label>
+										<br/>
+										<input id="btn-login" value="Log in" class="btn btn-custom"/>
+										</form>
+									</div>
+								  </li>
+								  <li><a href=""><i class="icon-edit"></i>  Signup</a></li>
+								  <? } else {?>
+									<li><a href="<?= base_url('')?>"><i class="icon-user"> </i>You are logged in as <?= $username?> - <?= $role?></a></li>
+									<li><a id="logout" style="cursor:pointer">Logout</i></a></li>
+								  <? }?>
 								</ul>
 							</div><!-- /.nav-collapse -->
 						</div>
 					</div><!-- /navbar-inner -->
 			  </div><!-- /navbar -->
-			  <div class="well" align="center">
+			  <div class="banner" align="center" style="background:url(<?= base_url('assets/img/jumbo.png')?>);">
 					<span>
-						<h1>Iskolarship</h1> 
+						<p style="font-size:80px">Iskolarship</p> 
+						<br/>
 						<p class="lead">Crowd-funded education for college students</p>
-						<a id="focus_here" name="focus_here"></a>
 					</span>
 				</div>
+				<br/>
 			</div>
