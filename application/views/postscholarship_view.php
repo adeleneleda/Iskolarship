@@ -20,6 +20,19 @@ function validateForm() {
 		alert("Please select an input file");
 		return false;
 	}
+	
+	var f = document.getElementById("file");
+	var filename = f.value;
+	var ext = filename.substring(filename.lastIndexOf('.') + 1);
+	ext = ext.toLowerCase();
+	
+	if(ext == "pdf") {
+		return true;
+	}
+	else {
+		alert("Please upload a pdf file.");
+		return false;
+	}
 }
 
 $(document).ready(function() { 
