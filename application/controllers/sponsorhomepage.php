@@ -7,7 +7,10 @@ class sponsorhomepage extends CI_Controller {
 	}
 	
 	public function index() {
-		$this->load_view('sponsorhomepage_view');
+		#populate 
+		$scholarships = $this->Model->get_scholarships();
+	
+		$this->load_view('sponsorhomepage_view', compact('scholarships'));
 	}
 	}
 
