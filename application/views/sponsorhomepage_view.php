@@ -7,7 +7,7 @@
 	if(!empty($scholarships)) {
 		while($counter < sizeof($scholarships)) { ?>
 			<tr>
-			<td> <a href=''> <?php echo $scholarships[$counter]['title']; ?> </a></td>
+			<td> <a href="<?= base_url('viewscholarshipdetails/loadscholarshipinfo_AsDonor/' . $scholarships[$counter]['scholarshipid'])?>" > <?php echo $scholarships[$counter]['title']; ?> </a></td>
 			<td> <?php echo $scholarships[$counter]['description']; ?> </td>
 			</tr>
 		<?php
