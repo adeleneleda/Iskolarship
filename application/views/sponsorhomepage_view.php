@@ -1,4 +1,5 @@
-<a href="<?= base_url('postscholarship')?>" style="height:23px;">Create scholarship</a>
+<div class="span12" style="padding:10px">
+<a href="<?= base_url('postscholarship')?>" style="height:23px;" class="btn btn-custom">Create scholarship</a>
 
 <h4> Posted scholarships </h4>
 <table>
@@ -18,3 +19,4 @@
 	<tr> No scholarships found </tr>
 	<?php } ?>		
 </table>
+</div>

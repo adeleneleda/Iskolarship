@@ -6217,3 +6217,8 @@ a.badge:focus {
        -moz-border-radius: 8px;
             border-radius: 8px;
     }
+
+.orange {
+	color:white;
+	background-color: #dd7a14;
+}

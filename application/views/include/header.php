@@ -68,6 +68,7 @@
 			data: { username: $("#username").val(), password: $("#password").val() }
 		}).done(function( msg ) {
 			if(msg == "" || msg == null) alert("Invalid username and password combination.");
+			else if(msg == "donor") window.location = "<?= base_url("sponsorhomepage")?>";
 			else window.location = "<?= base_url("")?>";
 		});
 	}
@@ -108,7 +109,7 @@
 										</form>
 									</div>
 								  </li>
-								  <li><a href=""><i class="icon-edit"></i>  Signup</a></li>
+								  <li><a href="<?= base_url('poststudentdetails')?>"><i class="icon-edit"></i>  Signup</a></li>
 								  <? } else {?>
 									<li><a href="<?= base_url('')?>"><i class="icon-user"> </i>You are logged in as <?= $username?> - <?= $role?></a></li>
 									<li><a id="logout" style="cursor:pointer">Logout</i></a></li>

@@ -7,7 +7,7 @@
 			</div>
 			<div class="well" style="background-color:white">
 			Description:<br/>
-			I am beautiful, no matter what they say
+			A studious student in need. 
 			</div>
 		</div>
 		<div class="well span5">

@@ -60,9 +60,9 @@ class CI_Controller {
 	
 	protected function load_view($view, $vars = array()) {
 		#insert session errors here
-		$this->load->view('include/header');
+		$this->load->view('include/header', $vars);
 		$this->load->view($view, $vars);
-		$this->load->view('include/footer');
+		$this->load->view('include/footer', $vars);
 	}
 }
 // END Controller class

@@ -18,6 +18,12 @@ class Viewscholarshipdetails extends Main_Controller {
 		$this->load_view('viewscholarshipdetails_view', compact('scholarshipinfo', 'scholarshipid'));
 	}
 	
+	public function loadscholarshipinfo_AsDonor($scholarshipid) {
+		$scholarshipinfo = $this->Model->loadscholarshipdetails($scholarshipid);
+		$applicants = $this->Model->get_scholarship_applicants($scholarshipid);
+		$this->load_view('viewscholarshipdetails_AsDonor_view', compact('scholarshipinfo', 'scholarshipid', 'applicants'));
+	}
+	
 	public function applyforscholarship() {
 		$scholarshipid = $this->input->post('scholarshipid');
 		$this->Model->applyforscholarship($scholarshipid);

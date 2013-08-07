@@ -7,7 +7,9 @@ class postscholarship extends CI_Controller {
 	}
 	
 	public function index() {
-		$this->load_view('postscholarship_view');
+		$programs = $this->Model->get_programs();
+		$yearlevels = $this->Model->get_yearlevels();
+		$this->load_view('postscholarship_view', compact('programs', 'yearlevels'));
 	}
 	
 	public function postScholarship() {
@@ -34,7 +36,9 @@ class postscholarship extends CI_Controller {
 		
 		#upload the file
 		move_uploaded_file($_FILES["file"]["tmp_name"], "scholarshippdfs/" . $scholarshipid . '.pdf');
-		
+		$programs = $this->Model->get_programs();
+		$yearlevels = $this->Model->get_yearlevels();
+		$this->load_view('postscholarship_view', compact('programs', 'yearlevels'));
 		
 	}
 }

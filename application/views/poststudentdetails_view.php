@@ -9,11 +9,9 @@ $( "#birthday" ).datepicker();
 });
 </script>
 
-<div class="container">
-    <div class="row-fluid">
         <div class="span12">
             <form action="<?= base_url('poststudentdetails/get_details')?>" method="post" enctype="multipart/form-data"> 
-                <div class="row">
+                <div class="row-fluid">
                     <div class="span6 well">
                         <h4> Site Information </h4>
                         <label> Username: </label>
@@ -112,9 +110,7 @@ $( "#birthday" ).datepicker();
                     </div>
                 </div>
                 <center>
-                    <input type="submit" value="Sign up" class="btn btn-primary">
+                    <input type="submit" value="Sign up" class="btn btn-custom btn-xlarge">
                 </center>
             </form>
         </div>
-    </div>
-</div>

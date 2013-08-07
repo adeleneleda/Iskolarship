@@ -8,6 +8,20 @@ class postscholarship_model extends Base_Model {
         parent::__construct();
     }
 	
+	function get_programs()
+	{
+		$results = $this->db->query('SELECT programid, name FROM programs;');
+		$results = $results->result_array();
+		return $results;
+	}
+	
+	function get_yearlevels()
+	{
+		$results = $this->db->query('SELECT yearlevelid, description FROM yearlevels;');
+		$results = $results->result_array();
+		return $results;
+	}
+	
 	public function postScholarship2db($xtitle, $xdescription, $xprogram, $xgender, $xyearlv, $xmaxincome) {
 		
 		$title = '\'' .$xtitle. '\'';

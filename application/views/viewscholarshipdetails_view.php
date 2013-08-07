@@ -31,14 +31,15 @@
 	<br/>
 	<h4>Donor Information</h4>
 	<div style="padding-left:10px">
-	<?$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?><br/>		
+	<?//$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?><br/>			
 	<table>
 		<tr>
 			<td>
 				Donor:
 			</td>
 			<td style="padding-left:20px">
-				<?=implode($fullname, " ");?>
+				<?//=implode($fullname, " ");?>
+				Philweb - Globe Partnership
 			</td>
 		</tr>
 		<tr>
