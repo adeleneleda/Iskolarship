@@ -53,15 +53,19 @@ $(document).ready(function() {
 
 </script>
 
-<div class="span12 well">
-	<h3> Create scholarship </h3>
+<div class="container">
 	<div class="row-fluid">
-		<label> Scholarship Name </label>
-		<input type="text" name="title" />
-	</div>
+		<div class="span6 well">
+		<h3> Create scholarship </h3>
+			<h4> Scholarship Name </h4>
+			<input type="text" name="title" />
+			<h4> Description </h4>
+			<textarea placeholder="Description" name="description" type="text"></textarea>
+		</div>
 	
-	<div class="row">
-	<div class="span5">
+	
+	<div class="span6 well">
+		<h4> Optional search tags </h4>
 		<table class="table">
 			<tbody>
 				<tr>
@@ -122,18 +126,22 @@ $(document).ready(function() {
 	</div>
 	</div>
 	
+	
 	<div class="row-fluid">
-	<label> Description </label>
-	<textarea placeholder="Description" name="description" type="text"></textarea>
-	<br/>
-	<input id="file" type="file" name="file"/>
-	<br/>
-	<br>
-	<br>
-	<div><input type="submit" value="CREATE SCHOLARSHIP"></div>
+	<div class="span6 well">
+		<h4> Specific scholarship mechanics </h4>
+		<input id="file" type="file" name="file"/>
+
 	</div>
 	
+	<div class="span6 well">
+		<div><input class="btn-primary" type="submit" value="CREATE SCHOLARSHIP"></div>
+	</div>
+	
+	</div>
 </div>
+	
+
 
 <!--
 <div class="container">
