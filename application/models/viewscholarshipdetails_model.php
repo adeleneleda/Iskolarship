@@ -16,19 +16,19 @@ class Viewscholarshipdetails_model extends Base_Model {
 			return $temp[0];
 		}
 	return false;
-  }
-  
-  public function get_scholarship_applicants($scholarshipid) {
-	$query = "SELECT firstname, middlename, lastname, name
-	from scholarshipapplications join students using (studentid)
-	join persons using (personid)
-	join programs using (programid)
-	where scholarshipid = " .$scholarshipid.";";
-	$results = $this->db->query($query);
-	$results = $results->result_array();
+	}
 	
-	return $results;
-  }
+	public function get_scholarship_applicants($scholarshipid) {
+		$query = "SELECT firstname, middlename, lastname, name
+		from scholarshipapplications join students using (studentid)
+		join persons using (personid)
+		join programs using (programid)
+		where scholarshipid = " .$scholarshipid.";";
+		$results = $this->db->query($query);
+		$results = $results->result_array();
+		
+		return $results;
+	}
 
 	public function applyforscholarship($scholarshipid) {
 		//Get who's logged in
