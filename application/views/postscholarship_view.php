@@ -54,9 +54,16 @@ $(document).ready(function() {
 </script>
 
 <div class="container">
+<div class="row-fluid">
+<a href"" style="height:23px" class="btn btn-custom pull-right">Back to sponsor homepage</a>
+<br>
+<br>
+</div>
 	<div class="row-fluid">
 		<div class="span6 well">
 		<h3> Create scholarship </h3>
+		<form id="post-form" action="<?= base_url('postscholarship/postScholarship') ?>" method="post" enctype="multipart/form-data" class="sample-form"
+				onsubmit="return validateForm()" name="trueform">
 			<h4> Scholarship Name </h4>
 			<input type="text" name="title" />
 			<h4> Description </h4>
@@ -135,8 +142,9 @@ $(document).ready(function() {
 	</div>
 	
 	<div class="span6 well">
-		<div><input class="btn-primary" type="submit" value="CREATE SCHOLARSHIP"></div>
+		<div><input class="btn btn-primary" type="submit" value="CREATE SCHOLARSHIP"></div>
 	</div>
+	</form>
 	
 	</div>
 </div>

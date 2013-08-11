@@ -7,7 +7,7 @@ class Viewscholarshipdetails_model extends Base_Model {
    }
    
 	public function loadscholarshipdetails($scholarshipid) {
-	$query = "select title, scholarships.description as sdesc, firstname, lastname, middlename, namesuffix, donors.description as ddesc, expiry, slots
+	$query = "select scholarshipid, title, scholarships.description as sdesc, firstname, lastname, middlename, namesuffix, donors.description as ddesc, expiry, slots
 	FROM scholarships join donors using (donorid) join persons using (personid) where scholarshipid = ".$scholarshipid.";";
 	$results = $this->db->query($query);
 	if($results->num_rows() > 0)
@@ -19,15 +19,36 @@ class Viewscholarshipdetails_model extends Base_Model {
 	}
 	
 	public function get_scholarship_applicants($scholarshipid) {
-		$query = "SELECT firstname, middlename, lastname, name
+		$query = "SELECT studentid, firstname, middlename, lastname, name
 		from scholarshipapplications join students using (studentid)
 		join persons using (personid)
 		join programs using (programid)
-		where scholarshipid = " .$scholarshipid.";";
+		where scholarshipid = " .$scholarshipid. "
+		AND studentid NOT IN ( SELECT studentid from awardedscholarships where scholarshipid = " .$scholarshipid. ")";
 		$results = $this->db->query($query);
 		$results = $results->result_array();
 		
 		return $results;
+	}
+	
+	public function get_scholarship_grantees($scholarshipid) {
+		$query = "SELECT studentid, firstname, middlename, lastname, name
+		from awardedscholarships join students using (studentid)
+		join persons using (personid)
+		join programs using (programid)
+		where scholarshipid = " .$scholarshipid;
+		$results = $this->db->query($query);
+		$results = $results->result_array();
+		
+		return $results;
+	}
+	
+	public function grant_scholarship($scholarshipid, $studentid, $donorid) {
+		$query = "INSERT INTO awardedscholarships (scholarshipid, studentid, insertedby) values ("
+		. $scholarshipid . ","
+		. $studentid . ","
+		. $donorid . ");";
+		$this->db->query($query);
 	}
 
 	public function applyforscholarship($scholarshipid) {
