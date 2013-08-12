@@ -53,10 +53,11 @@ class searchscholarship_model extends Base_Model {
 			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 3 and requirement = '".$maxincome."')";
 		}
 		$whereclause = $whereclause." and true";
-		echo 'SELECT scholarshipid, title from scholarships where '.$whereclause;
-		die();
+		#echo 'SELECT scholarshipid, title from scholarships where '.$whereclause;
+		#die();
 		#query to get all scholarships
-		$query = 'SELECT scholarshipid, title from scholarships where '.$whereclause;
+		#$query = 'SELECT scholarshipid, title from scholarships where '.$whereclause;
+		$query = 'SELECT scholarshipid, title from scholarships';
 		$results = $this->db->query($query);
 		$results = $results->result_array();
 		return $results;
