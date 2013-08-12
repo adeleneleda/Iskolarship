@@ -56,7 +56,10 @@
 						<input name="scholarshipid" type="hidden" value="<?=$scholarshipinfo['scholarshipid'];?>" >
 					</form> 
 				</td>
-				<td> <a href="" > <?php echo $applicants[$counter]['firstname']; ?> </td>
+				<td> 
+				<a href="<?=base_url('viewstudentdetails/loadstudentinfo/' .$applicants[$counter]['studentid'])?>" >
+				<?php echo $applicants[$counter]['firstname']; ?>
+				</td>
 				</tr>
 			<?php
 				$counter++;
@@ -76,7 +79,20 @@
 		if(!empty($grantees)) {
 			while($counter < sizeof($grantees)) { ?>
 				<tr>
-				<td> <a href="" > <?php echo $grantees[$counter]['firstname']; ?> </td>
+				<td> 
+				
+				<!-- kaya naging ganito para magconform dun sa function prototype ni Adelen for loadstudent info -->
+				<!--
+				<form action="<?=base_url('viewstudentdetails/loadstudentinfo/')?>" method='POST'>
+					<input type="hidden" name="studentid" value="<?=$grantees[$counter]['studentid'];?>">
+					<input type="submit" value="<?=$grantees[$counter]['firstname'];?>">
+				</form>
+				-->
+				
+				
+				<a href="<?=base_url('viewstudentdetails/loadstudentinfo/' .$grantees[$counter]['studentid'])?>" > <?php echo $grantees[$counter]['firstname']; ?> 
+				
+				<td>
 				</tr>
 			<?php
 				$counter++;
