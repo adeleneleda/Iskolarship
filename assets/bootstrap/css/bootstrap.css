@@ -4364,22 +4364,14 @@ input[type="submit"].btn.btn-mini {
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #d44413;
-  background-image: -moz-linear-gradient(top, #ce4213, #dd4814);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ce4213), to(#dd4814));
-  background-image: -webkit-linear-gradient(top, #ce4213, #dd4814);
-  background-image: -o-linear-gradient(top, #ce4213, #dd4814);
-  background-image: linear-gradient(to bottom, #ce4213, #dd4814);
-  background-repeat: repeat-x;
-  border: 1px solid #c64012;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffce4213', endColorstr='#ffdd4814', GradientType=0);
-  *zoom: 1;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+background: #dd7a14; /* Old browsers */
+background: -moz-linear-gradient(top,  #dd7a14 0%, #ff7400 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dd7a14), color-stop(100%,#ff7400)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #dd7a14 0%,#ff7400 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #dd7a14 0%,#ff7400 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #dd7a14 0%,#ff7400 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #dd7a14 0%,#ff7400 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dd7a14', endColorstr='#ff7400',GradientType=0 ); /* IE6-9 */
 }
 
 .navbar-inner:before,
@@ -4617,7 +4609,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > li > a:hover {
   color: #ffffff;
   text-decoration: none;
-  background-color: #a5360f;
+  background-color: #d5360f;
 }
 
 .navbar .nav > .active > a,
@@ -6207,7 +6199,7 @@ a.badge:focus {
 
 .btn-custom:active,
 .btn-custom.active {
-  background-color: #ae6010 \9;
+  background-color: #ae6010;
 }
 .btn-xlarge {
     padding: 18px 28px;
@@ -6217,6 +6209,11 @@ a.badge:focus {
        -moz-border-radius: 8px;
             border-radius: 8px;
     }
+
+.orange {
+	color:white;
+	background-color: #dd7a14;
+}
 
 .orange {
 	color:white;

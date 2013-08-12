@@ -69,8 +69,51 @@ table.wide, table.wide tr, table.wide td {
 }
 
 .picture {
-	background-image: url("../../images/profile-image.jpg");
-	height: 250px;
+	background-image: url("../../images/1.jpg");
+	height: 455px;
 	width: 250px;
+	padding-top: 260px;
 	margin-bottom: 10px;
+}
+
+.picture2 {
+	background-image: url("../../images/2.jpg");
+	height: 455px;
+	width: 250px;
+	padding-top: 260px;
+	margin-bottom: 10px;
+}
+
+.picture3 {
+	background-image: url("../../images/3.jpg");
+	height: 455px;
+	width: 250px;
+	padding-top: 260px;
+	margin-bottom: 10px;
+}
+
+.profile2 {
+	background-color: rgba(255,255,255,.6);
+}
+
+.desc {
+	background-color: rgba(255,255,255,.6);
+}
+
+.profile2:hover {
+	background-color: rgba(255,255,255,.8);
+}
+
+br {
+	line-height: 0px;
+}
+
+.circle {
+	border-radius: 50%;
+	width: 220px;
+	height: 220px; 
+	color:white;
+	text-align:center;
+	font-size: 100px;
+	/* width and height can be anything, as long as they're equal */
 }

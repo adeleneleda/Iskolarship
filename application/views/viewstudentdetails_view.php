@@ -1,20 +1,16 @@
 <div class="span12" align="center">
  <?$fullname = array($studentinfo['firstname'], $studentinfo['middlename'], $studentinfo['lastname'], $studentinfo['namesuffix']);?>
 	<div class="row" style="width:95%">
-		<div class="well span5" align="center" style="text-align:center">
-			<div class="well" style="background-color:white">
-			<img src="<?= base_url('images/pic.png')?>" style="padding-left:20px;"/>
-			</div>
-			<div class="well" style="background-color:white">
-			Description:<br/>
+		<div class="well span5 picture" align="center" style='text-align:center; background-color:white; padding:0px; width:505px; height:50px; padding-top:340px; background-image: url("<?= base_url('images/1.jpg')?>")'>
+			<div class="desc" style="padding:10px">
 			A studious student in need. 
 			</div>
 		</div>
-		<div class="well span5">
+		<div class="well span5" align="center">
 			<table style="width:100%; text-align:center">
 			<tr>
 			<td style="text-align:left">
-			<h3>Donation Information</h3>
+			<h3 style="color:#dd7a14">Donation Information</h3>
 			</td>
 			<td style="text-align:right">
 			&nbsp;
@@ -66,9 +62,10 @@
 			</table>
 			</form>
 		</div>
-		<div class="well span12" style="width:91%;">
+		<div class="span12" style="width:91%;">
+		<br/>
 			<div style="width:80%;">
-			<h3>Student's Information</h3>
+			<h3 style="color:#dd7a14">Student's Information</h3>
 			<hr>
 			<table class="wide table table-bordered tablesorter tablesorter-bootstrap table-striped table-hover">
 				<tr>

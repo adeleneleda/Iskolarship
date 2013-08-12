@@ -16,7 +16,8 @@ $(document).ready(function() {
 }); 
 
 </script>
-
+<div class="span12">
+<a href="<?= base_url("editstudentprofile")?>" style="height:23px" class="btn btn-custom pull-right">Edit Profile</a>
 <h2> Search scholarships </h2>
 <div class="container">
 	<div class="row-fluid">
@@ -105,7 +106,6 @@ $(document).ready(function() {
 			<?php } ?>		
 		</table>
 	</div>
-	
-	
 	</div>
+</div>
 </div>

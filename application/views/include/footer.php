@@ -1,6 +1,6 @@
 		</div>
 		</div>
-		<footer style="text-align:center" class="modal-footer"><br/>
+		<footer style="text-align:center" class="modal-footer orange"><br/>
 		  <table>
 		  <tr>
 		  <img src="<?= base_url("images/engg.png")?>">

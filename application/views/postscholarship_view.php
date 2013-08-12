@@ -53,9 +53,9 @@ $(document).ready(function() {
 
 </script>
 
-<div class="container">
+<div class="span12">
 <div class="row-fluid">
-<a href"" style="height:23px" class="btn btn-custom pull-right">Back to sponsor homepage</a>
+<a href="<?= base_url("sponsorhomepage")?>" style="height:23px" class="btn btn-custom pull-right">Back to sponsor homepage</a>
 <br>
 <br>
 </div>

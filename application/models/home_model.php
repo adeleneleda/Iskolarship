@@ -18,11 +18,13 @@ class Home_Model extends Base_Model {
 		return false;
 	}
 	
-	function get_details($userid) {
-		$results = $this->db->query('SELECT * FROM proponent JOIN updesignation USING(updesignation_id) WHERE user_id='. $userid .';');
-		
-		if($results->num_rows() > 0)
-		{
+	function get_details($userdata, $role) {
+		if($role == "student") {
+			$results = $this->db->query("select personid, studentid from users join persons using (personid) left outer join students on students.personid = persons.personid left outer join donors on donors.personid = persons.personid where login = '".$userdata['username']."' and password = '".$userdata['password']."';");
+		} else if ($role == "donor") {
+			$results = $this->db->query("select personid, donorid from users join persons using (personid) left outer join students on students.personid = persons.personid left outer join donors on donors.personid = persons.personid where login = '".$userdata['username']."' and password = '".$userdata['password']."';");
+		}
+		if($results->num_rows() > 0) {
 			$temp = $results->result_array();
 			return $temp[0];
 		}

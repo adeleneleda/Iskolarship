@@ -60,9 +60,15 @@ class CI_Controller {
 	
 	protected function load_view($view, $vars = array()) {
 		#insert session errors here
-		$this->load->view('include/header', $vars);
-		$this->load->view($view, $vars);
-		$this->load->view('include/footer', $vars);
+		$username = $this->session->userdata("username");
+		$role = $this->session->userdata("role");
+		$personid = $this->session->userdata("personid");
+		$donorid = $this->session->userdata("donorid");
+		$studentid = $this->session->userdata("studentid");
+		$sess = compact('username', 'role', 'personid', 'donorid', 'studentid');
+		$this->load->view('include/header', $vars + $sess);
+		$this->load->view($view, $vars + $sess);
+		$this->load->view('include/footer', $vars + $sess);
 	}
 }
 // END Controller class

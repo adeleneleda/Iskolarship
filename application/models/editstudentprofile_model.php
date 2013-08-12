@@ -35,7 +35,7 @@ class EditStudentProfile_Model extends Base_Model {
 		reasonforneedingscholarship, targetmoney, accountnumber, runninggwa, studentdescription
 		FROM persons JOIN students using (personid) WHERE studentid = ".$studentid.";";
         
-        echo $query;
+        //echo $query;
 		$results = $this->db->query($query);
 		if($results->num_rows() > 0)
         {

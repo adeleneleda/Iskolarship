@@ -69,6 +69,7 @@
 		}).done(function( msg ) {
 			if(msg == "" || msg == null) alert("Invalid username and password combination.");
 			else if(msg == "donor") window.location = "<?= base_url("sponsorhomepage")?>";
+			else if(msg == "student") window.location = "<?= base_url("searchscholarship")?>";
 			else window.location = "<?= base_url("")?>";
 		});
 	}
@@ -78,9 +79,9 @@
 			<div class="row">   
 				<div class="span12">
 				<br/>
-				<div class="navbar" style="margin:0px">
+				<div class="navbar" style="margin:0px; ">
 					<div class="navbar-inner">
-						<div class="container" style="width: auto;">
+						<div class="container" style="width: auto; margin:0px;">
 							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
@@ -109,7 +110,7 @@
 										</form>
 									</div>
 								  </li>
-								  <li><a href="<?= base_url('poststudentdetails')?>"><i class="icon-edit"></i>  Signup</a></li>
+								  <li><a href="<?= base_url('studentsignup')?>"><i class="icon-edit"></i>  Signup</a></li>
 								  <? } else {?>
 									<li><a href="<?= base_url('')?>"><i class="icon-user"> </i>You are logged in as <?= $username?> - <?= $role?></a></li>
 									<li><a id="logout" style="cursor:pointer">Logout</i></a></li>
@@ -119,12 +120,10 @@
 						</div>
 					</div><!-- /navbar-inner -->
 			  </div><!-- /navbar -->
-			  <div class="banner" align="center" style="background:url(<?= base_url('assets/img/jumbo.png')?>);">
-					<span>
-						<p style="font-size:80px">Iskolarship</p> 
-						<br/>
-						<p class="lead">Crowd-funded education for college students</p>
-					</span>
+			  <div class="banner" align="center" style="background:url(<?= base_url('assets/img/header.png')?>);">
+				<br/>
+				<br/>
+				<br/>
 				</div>
 				<br/>
 			</div>

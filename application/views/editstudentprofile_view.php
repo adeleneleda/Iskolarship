@@ -152,7 +152,7 @@
             </div>
         </div>
         <center>
-            <input type="submit" value="Sign up" class="btn btn-custom btn-xlarge">
+            <input type="submit" value="Edit Profile" class="btn btn-custom btn-large">
         </center>
     </form>
 </div>
