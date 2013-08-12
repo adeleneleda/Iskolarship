@@ -8,8 +8,8 @@ class EditStudentProfile extends CI_Controller {
     
     public function get_details()
     {
-        $studid = 19;
-        $pid = 16;
+        $studid = $this->session->userdata("studentid");;
+        $pid = $this->session->userdata("personid");;
         $studentdetails = array();
         $studentdetails['program'] = $this->input->post("program");
         $studentdetails['yearlevel'] = $this->input->post("yearlevel");
@@ -39,38 +39,16 @@ class EditStudentProfile extends CI_Controller {
         $extension = end($temp);
         if(($_FILES["cvfile"]["type"] == "application/pdf") && in_array($extension, $allowedExts))
         {
-            if ($_FILES["cvfile"]["error"] > 0)
-            {
-                echo "Error: " . $_FILES["cvfile"]["error"] . "<br>";
-            }
-            else
-            {
-                move_uploaded_file($_FILES["cvfile"]["tmp_name"], "studentcvs/" . $studid . "_cv.pdf");
-            }
+            move_uploaded_file($_FILES["cvfile"]["tmp_name"], "studentcvs/" . $studid . "_cv.pdf");
         }
-        else
-        {
-            echo "Invalid file";
-        }
-        
+
         $temp = explode(".", $_FILES["copyofgrades"]["name"]);
         $extension = end($temp);
         if(($_FILES["copyofgrades"]["type"] == "application/pdf") && in_array($extension, $allowedExts))
         {
-            if ($_FILES["copyofgrades"]["error"] > 0)
-            {
-                echo "Error: " . $_FILES["copyofgrades"]["error"] . "<br>";
-            }
-            else
-            {
-                move_uploaded_file($_FILES["copyofgrades"]["tmp_name"], "studentcopyofgrades/" . $studid . "_copyofgrades.pdf");
-            }
+            move_uploaded_file($_FILES["copyofgrades"]["tmp_name"], "studentcopyofgrades/" . $studid . "_copyofgrades.pdf");
         }
-        else
-        {
-            echo "Invalid file";
-        }
-        
+
         $allowedExts = array("jpeg", "jpg", "png");
         $temp = explode(".", $_FILES["dpfile"]["name"]);
         $extension = end($temp);
@@ -79,21 +57,9 @@ class EditStudentProfile extends CI_Controller {
             ($_FILES["dpfile"]["type"] == "image/png") && 
             in_array($extension, $allowedExts))
         {
-            if ($_FILES["dpfile"]["error"] > 0)
-            {
-                echo "Error: " . $_FILES["dpfile"]["error"] . "<br>";
-            }
-            else
-            {
-                move_uploaded_file($_FILES["dpfile"]["tmp_name"], "studentprofilepictures/" . $studid . "_profilepicture." . $extension);
-            }
+            move_uploaded_file($_FILES["dpfile"]["tmp_name"], "studentprofilepictures/" . $studid . "_profilepicture." . $extension);
         }
-        else
-        {
-            echo "Invalid file";
-        }
-        
-        
+            
         $this->load_view('signedup_view');
     }
     
@@ -102,11 +68,9 @@ class EditStudentProfile extends CI_Controller {
         $programs = $this->Model->get_programs();
         $yearlevels = $this->Model->get_yearlevels();
         $banks = $this->Model->get_banks();
-        $studentid = 19;
-		$studentinfo = $this->Model->get_studentdetails($studentid);
-		//print_r($studentinfo);
-		//die();
-        $this->load_view('editstudentprofile_view', compact('programs', 'yearlevels', 'banks','studentinfo', 'studentid'));
+		$studentinfo = $this->Model->get_studentdetails($this->session->userdata("studentid"));
+        $contacts = $this->Model->get_contactdetails($this->session->userdata("personid"));
+        $this->load_view('editstudentprofile_view', compact('programs', 'yearlevels', 'banks','studentinfo', 'studentid', 'contacts'));
     }
 }
 ?>

@@ -60,11 +60,11 @@
                     <table class="wide table table-bordered tablesorter tablesorter-bootstrap table-striped table-hover">
                         <tr>
                             <td><b>Mobile Number: </b></td>
-                            <td><input type="text" name="mobilenumber" class="span8"/><br/></td>
+                            <td><input type="text" name="mobilenumber" class="span8" value="<?php if(!empty($contacts['mobilenumber']))echo $contacts['mobilenumber'] ?>"/><br/></td>
                         </tr>
                         <tr>
                             <td><b>Email Address: </b></td>
-                            <td><input type="text" name="emailadd" class="span8"/><br/></td>
+                            <td><input type="text" name="emailadd" class="span8" value="<?php echo $contacts['emailadd'] ?>"/><br/></td>
                         </tr>
                     </table>
                 </div>    
@@ -78,11 +78,13 @@
                         </tr>
                         <tr>
                             <td><b>Student Description:</b></td>
-                            <td><textarea  name="studentdescription" class="span6" style="width:350px; height:100px"></textarea></td>
+                            <td><textarea  name="studentdescription" class="span6" style="width:350px; height:100px">
+                                <?php echo $studentinfo['studentdescription'] ?>
+                            </textarea></td>
                         </tr>
                         <tr>
                             <td><b>Running GWA:</b></td>
-                            <td><input type="text" name="runninggwa" class="span8"/></td>
+                            <td><input type="text" name="runninggwa" class="span8" value="<?php echo $studentinfo['runninggwa'] ?>"/></td>
                         </tr>
                     </table>
                 </div>
@@ -118,6 +120,7 @@
                         <tr>
                             <td><b>Reason for Needing Scholarship: </b></td>
                             <td><textarea  name="reason" class="span6" style="width:350px; height:220px">
+                                <?php echo $studentinfo['reasonforneedingscholarship'] ?>
                             </textarea></td>
                         </tr>
                     </table>
