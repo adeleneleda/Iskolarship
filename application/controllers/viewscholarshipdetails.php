@@ -31,6 +31,7 @@ class Viewscholarshipdetails extends Main_Controller {
 		#$scholarshipid = $this->input->post("donorid");
 		#$donorid = 1; #hardcode muna
 		$this->Model->grant_scholarship($scholarshipid, $studentid, $this->session->userdata("donorid"));
+		$this->loadscholarshipinfo_AsDonor($scholarshipid);
 	}
 	
 	public function applyforscholarship() {
