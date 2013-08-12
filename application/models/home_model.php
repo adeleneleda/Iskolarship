@@ -18,12 +18,9 @@ class Home_Model extends Base_Model {
 		return false;
 	}
 	
-	function get_details($userdata, $role) {
-		if($role == "student") {
-			$results = $this->db->query("select personid, studentid from users join persons using (personid) left outer join students on students.personid = persons.personid left outer join donors on donors.personid = persons.personid where login = '".$userdata['username']."' and password = '".$userdata['password']."';");
-		} else if ($role == "donor") {
-			$results = $this->db->query("select personid, donorid from users join persons using (personid) left outer join students on students.personid = persons.personid left outer join donors on donors.personid = persons.personid where login = '".$userdata['username']."' and password = '".$userdata['password']."';");
-		}
+	function get_details($userdata) {
+		$results = $this->db->query("select persons.personid, students.studentid, donors.donorid from users join persons using (personid) left outer join students on students.personid = persons.personid left outer join donors on donors.personid = persons.personid where login = '".$userdata['username']."' and password = '".$userdata['password']."';");
+
 		if($results->num_rows() > 0) {
 			$temp = $results->result_array();
 			return $temp[0];

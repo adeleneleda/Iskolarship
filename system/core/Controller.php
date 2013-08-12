@@ -62,10 +62,10 @@ class CI_Controller {
 		#insert session errors here
 		$username = $this->session->userdata("username");
 		$role = $this->session->userdata("role");
-		$personid = $this->session->userdata("personid");
-		$donorid = $this->session->userdata("donorid");
-		$studentid = $this->session->userdata("studentid");
-		$sess = compact('username', 'role', 'personid', 'donorid', 'studentid');
+		$user_personid = $this->session->userdata("personid");
+		$user_donorid = $this->session->userdata("donorid");
+		$user_studentid = $this->session->userdata("studentid");
+		$sess = compact('username', 'role', 'user_personid', 'user_donorid', 'user_studentid');
 		$this->load->view('include/header', $vars + $sess);
 		$this->load->view($view, $vars + $sess);
 		$this->load->view('include/footer', $vars + $sess);
