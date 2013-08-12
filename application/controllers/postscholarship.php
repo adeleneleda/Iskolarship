@@ -38,9 +38,17 @@ class postscholarship extends CI_Controller {
 		move_uploaded_file($_FILES["file"]["tmp_name"], "scholarshippdfs/" . $scholarshipid . '.pdf');
 		$programs = $this->Model->get_programs();
 		$yearlevels = $this->Model->get_yearlevels();
-		$this->load_view('postscholarship_view', compact('programs', 'yearlevels'));
+		$this->goBackToSponsorHomepage();
 		
 	}
+	
+	public function goBackToSponsorHomepage() {
+		#populate 
+		$scholarships = $this->Model->get_scholarships($this->session->userdata("donorid"));
+		$username = $this->session->userdata("username");
+		$role = $this->session->userdata("role");
+		$this->load_view('sponsorhomepage_view', compact('scholarships', 'username', 'role'));
+		}
 }
 
 ?>
