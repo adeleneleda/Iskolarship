@@ -12,8 +12,8 @@ class Viewscholarshipdetails extends Main_Controller {
 		$this->loadscholarshipinfo();
 	}
 	
-	public function loadscholarshipinfo() {
-		$scholarshipid = 1;
+	public function loadscholarshipinfo($scholarshipid) {
+		#$scholarshipid = 1;
 		$scholarshipinfo = $this->Model->loadscholarshipdetails($scholarshipid);
 		$this->load_view('viewscholarshipdetails_view', compact('scholarshipinfo', 'scholarshipid'));
 	}
@@ -29,8 +29,8 @@ class Viewscholarshipdetails extends Main_Controller {
 		$scholarshipid = $this->input->post("scholarshipid");
 		$studentid = $this->input->post("studentid");
 		#$scholarshipid = $this->input->post("donorid");
-		$donorid = 1; #hardcode muna
-		$this->Model->grant_scholarship($scholarshipid, $studentid, $donorid);
+		#$donorid = 1; #hardcode muna
+		$this->Model->grant_scholarship($scholarshipid, $studentid, $this->session->userdata("donorid"));
 	}
 	
 	public function applyforscholarship() {

@@ -57,7 +57,7 @@
 					</form> 
 				</td>
 				<td> 
-				<a href="<?=base_url('viewstudentdetails/loadstudentinfo/' .$applicants[$counter]['studentid'])?>" >
+				<a href="<?=base_url('viewstudentdetails/viewstudentinfo/' .$applicants[$counter]['studentid'])?>" >
 				<?php echo $applicants[$counter]['firstname']; ?>
 				</td>
 				</tr>
@@ -83,14 +83,14 @@
 				
 				<!-- kaya naging ganito para magconform dun sa function prototype ni Adelen for loadstudent info -->
 				<!--
-				<form action="<?=base_url('viewstudentdetails/loadstudentinfo/')?>" method='POST'>
+				<form action="<?=base_url('viewstudentdetails/viewstudentinfo/')?>" method='POST'>
 					<input type="hidden" name="studentid" value="<?=$grantees[$counter]['studentid'];?>">
 					<input type="submit" value="<?=$grantees[$counter]['firstname'];?>">
 				</form>
 				-->
 				
 				
-				<a href="<?=base_url('viewstudentdetails/loadstudentinfo/' .$grantees[$counter]['studentid'])?>" > <?php echo $grantees[$counter]['firstname']; ?> 
+				<a href="<?=base_url('viewstudentdetails/viewstudentinfo/' .$grantees[$counter]['studentid'])?>" > <?php echo $grantees[$counter]['firstname']; ?> 
 				
 				<td>
 				</tr>
