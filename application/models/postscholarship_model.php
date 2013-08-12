@@ -29,7 +29,7 @@ class postscholarship_model extends Base_Model {
 		
 		
 		#insert the title and description (these are required?)
-		$this->db->query('INSERT into scholarships (title, description) values(' .$title. ',' .$description. ');');
+		$this->db->query('INSERT into scholarships (title, description, donorid) values(' .$title. ',' .$description. ',' .$this->session->userdata("donorid"). ')');
 		
 		$scholarshipidx = $this->db->query('Select scholarshipid from scholarships
 							order by (scholarshipid) desc
@@ -58,6 +58,14 @@ class postscholarship_model extends Base_Model {
 		}
 		
 		return $scholarshipid;
+	}
+	
+	public function get_scholarships($donorid) {
+		//query para makuha lahat ng scholarships ng isang sponsor account
+		$results = $this->db->query('SELECT * from scholarships where donorid = ' .$donorid); 
+		$results = $results->result_array();
+		
+		return $results;
 	}
 }
 ?>
