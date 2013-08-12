@@ -13,8 +13,8 @@ class Viewstudentdetails extends Main_Controller {
 	}
 	
 	public function loadstudentinfo() {
-		$studentid = $this->input->post('studentid');
-		$studentid = 1;
+		//$studentid = $this->input->post('studentid');
+		$studentid = $x;
 		$studentinfo = $this->Model->getstudentinfo($studentid);
 		$money = $this->Model->gettotalmoney($studentid);
 		//print_r($studentinfo);
@@ -22,6 +22,16 @@ class Viewstudentdetails extends Main_Controller {
 		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid', 'money'));
 	}
 	
+	public function viewstudentinfo($x) {
+		//$studentid = $this->input->post('studentid');
+		$studentid = $x;
+		$studentinfo = $this->Model->getstudentinfo($studentid);
+		$money = $this->Model->gettotalmoney($studentid);
+		//print_r($studentinfo);
+		//die();
+		$this->load_view('viewstudentdetails_view', compact('studentinfo', 'studentid', 'money'));
+	}
+
 	public function downloadfile() {
 	$filename = $this->input->post('filename');
 	$filepath =  $this->input->post('filepath');
