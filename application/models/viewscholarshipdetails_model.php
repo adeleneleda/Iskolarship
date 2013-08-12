@@ -19,10 +19,17 @@ class Viewscholarshipdetails_model extends Base_Model {
 	}
 	
 	public function get_scholarship_applicants($scholarshipid) {
-		$query = "SELECT studentid, firstname, middlename, lastname, name
+		#hindi gagana yung query na 'to unless may information SA LAHAT NG TABLES NA 'YAN
+		#$query = "SELECT studentid, firstname, middlename, lastname, name
+		#from scholarshipapplications join students using (studentid)
+		#join persons using (personid)
+		#join programs using (programid)
+		#where scholarshipid = " .$scholarshipid. "
+		#AND studentid NOT IN ( SELECT studentid from awardedscholarships where scholarshipid = " .$scholarshipid. ")";
+		
+		$query = "SELECT studentid, firstname, middlename, lastname
 		from scholarshipapplications join students using (studentid)
 		join persons using (personid)
-		join programs using (programid)
 		where scholarshipid = " .$scholarshipid. "
 		AND studentid NOT IN ( SELECT studentid from awardedscholarships where scholarshipid = " .$scholarshipid. ")";
 		$results = $this->db->query($query);
@@ -32,11 +39,18 @@ class Viewscholarshipdetails_model extends Base_Model {
 	}
 	
 	public function get_scholarship_grantees($scholarshipid) {
-		$query = "SELECT studentid, firstname, middlename, lastname, name
+		#hindi gagana yung query na 'to unless may information SA LAHAT NG TABLES NA 'YAN
+		#$query = "SELECT studentid, firstname, middlename, lastname, name
+		#from awardedscholarships join students using (studentid)
+		#join persons using (personid)
+		#join programs using (programid)
+		#where scholarshipid = " .$scholarshipid;
+		
+		$query = "SELECT studentid, firstname, middlename, lastname
 		from awardedscholarships join students using (studentid)
 		join persons using (personid)
-		join programs using (programid)
 		where scholarshipid = " .$scholarshipid;
+		
 		$results = $this->db->query($query);
 		$results = $results->result_array();
 		
