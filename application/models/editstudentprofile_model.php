@@ -34,8 +34,6 @@ class EditStudentProfile_Model extends Base_Model {
 		birthday, sex, programid, yearlevel, familyincome, 
 		reasonforneedingscholarship, targetmoney, accountnumber, runninggwa, studentdescription
 		FROM persons JOIN students using (personid) WHERE studentid = ".$studentid.";";
-        
-        //echo $query;
 		$results = $this->db->query($query);
 		if($results->num_rows() > 0)
         {
@@ -43,6 +41,21 @@ class EditStudentProfile_Model extends Base_Model {
             return $temp[0];
         }
 		return false;
+    }
+    
+    function get_contactdetails($personid)
+    {
+        $contact1 = $this->db->query('SELECT contactinfo FROM contactdetails WHERE personid = ' . $personid . ' and contacttypeid = 1;');
+        $contact2 = $this->db->query('SELECT contactinfo FROM contactdetails WHERE personid = ' . $personid . ' and contacttypeid = 2;');
+        $contact2 = $contact2->result_array();
+        $results = array();
+        if($contact1->num_rows() > 0)
+        {
+            $contact1 = $contact1->result_array();
+            $results['mobilenumber'] = $contact1[0]['contactinfo'];
+        }
+        $results['emailadd'] = $contact2[0]['contactinfo'];
+        return $results;
     }
     
     function save_studentdetails($details, $pid, $studentid)
@@ -58,22 +71,22 @@ class EditStudentProfile_Model extends Base_Model {
                         runninggwa = ' . $details['runninggwa'] . ', studentdescription = ' . $details['studentdescription']  
                         . ' WHERE studentid = ' . $studentid . ';');
         
-        if($this->db->query('SELECT * from contactdetails WHERE personid = ' . $pid . ' and contacttypeid = 1;') == null)
-        {
-            $this->db->query('INSERT INTO contactdetails(contacttypeid, personid, contactinfo) values(1, ' . $pid . ', ' . $details['mobilenumber'] . ');');
-        }
-        else
+        if($this->db->query('SELECT * from contactdetails WHERE personid = ' . $pid . ' and contacttypeid = 1;')->num_rows() > 0)
         {
             $this->db->query('UPDATE contactdetails SET contactinfo = ' . $details['mobilenumber'] . ' WHERE personid = ' . $pid . ' and contacttypeid = 1;');
         }
-        
-        if($this->db->query('SELECT * from contactdetails WHERE personid = ' . $pid . ' and contacttypeid = 2;') == null)
+        else
         {
-            $this->db->query('INSERT INTO contactdetails(contacttypeid, personid, contactinfo) values(2, ' . $pid . ', ' . $details['emailadd'] . ');');
+            $this->db->query('INSERT INTO contactdetails(contacttypeid, personid, contactinfo) values(1, ' . $pid . ', ' . $details['mobilenumber'] . ');');
+        }
+        
+        if($this->db->query('SELECT * from contactdetails WHERE personid = ' . $pid . ' and contacttypeid = 2;')->num_rows() > 0)
+        {
+            $this->db->query('UPDATE contactdetails SET contactinfo = ' . $details['emailadd'] . ' WHERE personid = ' . $pid . ' and contacttypeid = 2;');
         }
         else
         {
-            $this->db->query('UPDATE contactdetails SET contactinfo = ' . $details['emailadd'] . ' WHERE personid = ' . $pid . ' and contacttypeid = 2;');
+            $this->db->query('INSERT INTO contactdetails(contacttypeid, personid, contactinfo) values(2, ' . $pid . ', ' . $details['emailadd'] . ');');
         }
         
         return;
