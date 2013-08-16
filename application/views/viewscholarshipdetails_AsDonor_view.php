@@ -36,6 +36,22 @@
 				<?=$scholarshipinfo['sdesc']?>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				Deadline:
+			</td>
+			<td style="padding-left:20px">
+				<?=$scholarshipinfo['expiry']?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Slots available:
+			</td>
+			<td style="padding-left:20px">
+				<?=$scholarshipinfo['slots']?>
+			</td>
+		</tr>
 	</table>
 	</div>
 	</div>
@@ -58,7 +74,7 @@
 				</td>
 				<td> 
 				<a href="<?=base_url('viewstudentdetails/viewstudentinfo/' .$applicants[$counter]['studentid'])?>" >
-				<?php echo $applicants[$counter]['firstname']; ?>
+				<?php echo $applicants[$counter]['firstname'] . ' ' . $applicants[$counter]['lastname']; ?>
 				</td>
 				</tr>
 			<?php
@@ -90,7 +106,7 @@
 				-->
 				
 				
-				<a href="<?=base_url('viewstudentdetails/viewstudentinfo/' .$grantees[$counter]['studentid'])?>" > <?php echo $grantees[$counter]['firstname']; ?> 
+				<a href="<?=base_url('viewstudentdetails/viewstudentinfo/' .$grantees[$counter]['studentid'])?>" > <?php echo $grantees[$counter]['firstname'] . ' ' . $grantees[$counter]['lastname']; ?> 
 				
 				<td>
 				</tr>

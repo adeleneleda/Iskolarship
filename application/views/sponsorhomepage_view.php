@@ -7,7 +7,11 @@
 <div class="well" style="padding-top:10px">
 <h4> Posted scholarships </h4>
 <div style="padding:10px;padding-top:0px">
-<table>
+<table class="table">
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+	</tr>
 	<?php
 	$counter = 0;
 	if(!empty($scholarships)) {
@@ -18,7 +22,7 @@
 			<a href="<?= base_url('viewscholarshipdetails/loadscholarshipinfo_AsDonor/' . $scholarships[$counter]['scholarshipid'])?>" > <?php echo $scholarships[$counter]['title']; ?> </a>
 			</td>
 			
-			<!--<td> <?php echo $scholarships[$counter]['description']; ?> </td>-->
+			<td> <?php echo $scholarships[$counter]['description']; ?> </td>
 			
 			</tr>
 		<?php

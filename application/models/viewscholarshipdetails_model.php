@@ -65,9 +65,9 @@ class Viewscholarshipdetails_model extends Base_Model {
 		$this->db->query($query);
 	}
 
-	public function applyforscholarship($scholarshipid) {
+	public function applyforscholarship($scholarshipid, $studentid) {
 		//Get who's logged in
-		$studentid = 1;
+		#$studentid = 1;
 		$query = 'insert into scholarshipapplications(scholarshipid, studentid) values('.$scholarshipid.', '.$studentid.');';
 		$this->db->query($query);
 	}

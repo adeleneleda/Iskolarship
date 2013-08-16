@@ -1,7 +1,7 @@
 
 <div class="span12">
 <div class="well">
-	<img src="<?= base_url("images/globe.jpg")?>"/>
+	<!--<img src="<?= base_url("images/globe.jpg")?>"/>-->
 	<h1><?=$scholarshipinfo['title']?></h1>
 	<hr/>
 	<h4>Scholarship Information</h4>
@@ -17,19 +17,19 @@
 				<?=$scholarshipinfo['title']?>
 			</td>
 		</tr>
-		<tr>
+		<!--<tr>
 			<td>
 				Description:
 			</td>
 			<td style="padding-left:20px">
 				<?=$scholarshipinfo['sdesc']?>
 			</td>
-		</tr>
+		</tr>-->
 	</table>
 	</div>
 	
 	<br/>
-	<h4>Donor Information</h4>
+	<!--<h4>Donor Information</h4>
 	<div style="padding-left:10px">
 	<?//$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?><br/>			
 	<table>
@@ -67,7 +67,7 @@
 			</td>
 		</tr>
 	</table>
-	</div>
+	</div>-->
 	<br/>
 	<h4>Scholarship Availability</h4>
 	<div style="padding-left:10px">
@@ -75,7 +75,7 @@
 	<table>
 		<tr>
 			<td>
-				Expiry:
+				Deadline:
 			</td>
 			<td style="padding-left:20px">
 				<?=$scholarshipinfo['expiry']?>
@@ -92,6 +92,10 @@
 	</table>
 	</div>
 	<br/>
+	<h4>Specific mechanics</h4>
+	<div style="padding-left:10px">
+	<button class="btn">Download detailed mechanics</button>
+	</div>
 	<form method="post" action="<?= base_url('viewscholarshipdetails/applyforscholarship')?>" enctype="multipart/form-data">
 		<input type="hidden" name = "scholarshipid" value = "<?=$scholarshipid?>"/>
 		<label for="reqtfile"><h4>Requirements</h4></label>

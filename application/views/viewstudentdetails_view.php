@@ -1,9 +1,9 @@
 <div class="span12" align="center">
  <?$fullname = array($studentinfo['firstname'], $studentinfo['middlename'], $studentinfo['lastname'], $studentinfo['namesuffix']);?>
 	<div class="row" style="width:95%">
-		<div class="well span5 picture" align="center" style='text-align:center; background-color:white; padding:0px; width:505px; height:50px; padding-top:340px; background-image: url("<?= base_url('images/1.jpg')?>")'>
+		<div class="well span5 picture" align="center" style='text-align:center; background-color:white; padding:0px; width:505px; height:50px; padding-top:340px; background-image: url("<?= base_url('images/x.jpg')?>")'>
 			<div class="desc" style="padding:10px">
-			A studious student in need. 
+			<?= $studentinfo['studentdescription']?>
 			</div>
 		</div>
 		<div class="well span5" align="center">
@@ -38,7 +38,7 @@
 			</table>
 			<br/>
 			<div class="progress" style="border:2px solid">
-				<div style="width: 69%;" class="bar bar-custom"></div>
+				<div style="width: <?=ceil(($money / $studentinfo['targetmoney']) * 100)?>%;" class="bar bar-custom"></div>
 			</div>
 			<form method="post" action="<?= base_url('viewstudentdetails/fundeducation')?>">
 			<input type="hidden" name = "studentid" value = "<?=$studentid?>">

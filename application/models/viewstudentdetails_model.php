@@ -20,7 +20,7 @@ class Viewstudentdetails_model extends Base_Model {
 	public function getstudentinfo($studentid) {
 		$query = "SELECT lastname, firstname, middlename, namesuffix, 
 		birthday, sex, programs.name, yearlevel, familyincome, 
-		reasonforneedingscholarship, targetmoney 
+		reasonforneedingscholarship, targetmoney, studentdescription
 		FROM persons JOIN students using (personid) JOIN programs using (programid) WHERE studentid = ".$studentid.";";
 		$results = $this->db->query($query);
 		if($results->num_rows() > 0)
