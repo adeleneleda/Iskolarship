@@ -54,7 +54,7 @@ class EditStudentProfile_Model extends Base_Model {
             $contact1 = $contact1->result_array();
             $results['mobilenumber'] = $contact1[0]['contactinfo'];
         }
-        $results['emailadd'] = $contact2[0]['contactinfo'];
+        $results['emailadd'] = !empty($contact2) ? $contact2[0]['contactinfo'] : "";
         return $results;
     }
     

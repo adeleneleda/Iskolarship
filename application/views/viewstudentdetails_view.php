@@ -1,7 +1,7 @@
 <div class="span12" align="center">
  <?$fullname = array($studentinfo['firstname'], $studentinfo['middlename'], $studentinfo['lastname'], $studentinfo['namesuffix']);?>
 	<div class="row" style="width:95%">
-		<div class="well span5 picture" align="center" style='text-align:center; background-color:white; padding:0px; width:505px; height:50px; padding-top:340px; background-image: url("<?= base_url('images/x.jpg')?>")'>
+		<div class="well span5 picture" align="center" style='text-align:center; background-color:white; padding:0px; width:505px; height:50px; padding-top:340px; background-image: url("<?= base_url('images/stud'.$studentid.'x.jpg')?>")'>
 			<div class="desc" style="padding:10px">
 			<?= $studentinfo['studentdescription']?>
 			</div>

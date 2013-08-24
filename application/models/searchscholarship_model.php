@@ -27,7 +27,7 @@ class searchscholarship_model extends Base_Model {
 			if($whereclause != "") {
 				$whereclause =$whereclause." and ";
 			}
-			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 1 and requirement = '".$programid."')";
+			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 1 and requirement = '".$xprogram."')";
 		}
 		
 		if($xgender) {
@@ -35,7 +35,7 @@ class searchscholarship_model extends Base_Model {
 			if($whereclause != "") {
 				$whereclause =$whereclause." and ";
 			}
-			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 2 and requirement = '".$gender."')";
+			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 2 and requirement = '".$xgender."')";
 		}
 		
 		if($xyearlv) {
@@ -43,21 +43,21 @@ class searchscholarship_model extends Base_Model {
 			if($whereclause != "") {
 				$whereclause =$whereclause." and ";
 			}
-			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 4 and requirement = '".$yearlevel."')";
+			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 4 and requirement = '".$xyearlv."')";
 		}
 		if($xmaxincome) {
 			//$maxincome --- get also.
 			if($whereclause != "") {
 				$whereclause =$whereclause." and ";
 			}
-			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 3 and requirement = '".$maxincome."')";
+			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 3 and requirement = '".$xmaxincome."')";
 		}
 		$whereclause = $whereclause." and true";
 		#echo 'SELECT scholarshipid, title from scholarships where '.$whereclause;
 		#die();
 		#query to get all scholarships
 		#$query = 'SELECT scholarshipid, title from scholarships where '.$whereclause;
-		$query = 'SELECT scholarshipid, title from scholarships';
+		$query = 'SELECT scholarshipid, title, description from scholarships';
 		$results = $this->db->query($query);
 		$results = $results->result_array();
 		return $results;

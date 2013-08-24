@@ -66,7 +66,8 @@ class CI_Controller {
 		$user_donorid = $this->session->userdata("donorid");
 		$user_studentid = $this->session->userdata("studentid");
 		$sess = compact('username', 'role', 'user_personid', 'user_donorid', 'user_studentid');
-		$this->load->view('include/header', $vars + $sess);
+		if(empty($role)) $this->load->view('include/header', $vars + $sess);
+		else $this->load->view('include/header-login', $vars + $sess);
 		$this->load->view($view, $vars + $sess);
 		$this->load->view('include/footer', $vars + $sess);
 	}

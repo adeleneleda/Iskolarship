@@ -57,7 +57,7 @@ function validateForm(){
 	return true;
 }
 </script>
-<div class="container">
+<div class="span12">
 	<div class="span4 well">
 		<h3>Student Search</h3><hr>
 		<h4>Filters</h4>
@@ -66,7 +66,7 @@ function validateForm(){
 			<tr>
 				<td> <label class="checkbox"> 
 					<input id="degree_cb" type="checkbox" name="degree_cb"/>Degree program</label></td>
-					<td>&nbsp</td>
+					<td>&nbsp </td>
 					<td> <select id="degree_choice" style="display:none" name="degree_choice">
 						<?php 
 							$ctr = 0;
@@ -126,7 +126,7 @@ function validateForm(){
 			$resultcnt = 0;
 			foreach($results as $rows){
 				$segment = array('viewstudentdetails', 'viewstudentinfo', $rows['studentid']);
-				$segments = array('images', 'profile-image.jpg');
+				$segments = array('images', 'stud'.$rows['studentid'].'x.jpg');
 				echo "
 					<table>
 						<tr>

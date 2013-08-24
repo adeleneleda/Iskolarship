@@ -31,36 +31,36 @@ help in his or her own little way.
         <div class="carousel-inner">
           <div class="item active">
             <div style="width:85%" class="container">
-              <div class="span4 picture">
+              <div class="span4 picture" style='background-image: url("<?= base_url('images/stud1.jpg')?>")'>
 				<div class="well profile2" style="font-size:16px; color:black;">
-				  <div class="name"><b>Catherine Bautista</b><br/><span class="label label-custom">On-going</span><br/>
+				  <div class="name"><b>Raphael Medina</b><br/><span class="label label-custom">On-going</span><br/>
 				  <br/>
 				  <b>Php 10,000 to go | 23 donors</b><br/>
 					<br/>
 					<div class="progress">
 					  <div style="width: 25%" class="bar bar-custom"></div>
-					</div><a href="<?= base_url("viewstudentdetails")?>" class="btn btn-custom">Donate</a>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/10")?>" class="btn btn-custom">Donate</a>
 				  </div>
 				</div>
 			  </div>
-             <div class="span4 picture2">
+             <div class="span4 picture" style='background-image: url("<?= base_url('images/stud2.jpg')?>")'>
 				<div class="well profile2" style="font-size:16px; color:black;">
-				  <div class="name"><b>Matthew Co</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <div class="name"><b>Camille Salazar</b><br/><span class="label label-custom">On-going</span><br/><br/>
 				  <b>Php 50,500 to go | 63 donors</b><br/>
 				  <br/>
 					<div class="progress">
 					  <div style="width: 60%" class="bar bar-custom"></div>
-					</div><a href="<?= base_url("viewstudentdetails")?>" class="btn btn-custom">Donate</a>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/11")?>" class="btn btn-custom">Donate</a>
 				  </div>
 				</div>
 			  </div>
-			  <div class="span4 picture3">
+			  <div class="span4 picture" style='background-image: url("<?= base_url('images/stud3.jpg')?>")'>
 				<div class="well profile2" style="font-size:16px; color:black;">
-				  <div class="name"><b>Martin Boribor</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <div class="name"><b>Ray Torres</b><br/><span class="label label-custom">On-going</span><br/><br/>
 				  <b>Php 25,300 to go | 13 donors</b><br/><br/>
 					<div class="progress">
 					  <div style="width: 40%" class="bar bar-custom"></div>
-					</div><a href="<?= base_url("viewstudentdetails")?>" class="btn btn-custom">Donate</a>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/12")?>" class="btn btn-custom">Donate</a>
 				  </div>
 				</div>
 			  </div>
@@ -68,36 +68,110 @@ help in his or her own little way.
           </div>
           <div class="item">
             <div style="width:85%" class="container">
-              <div class="span4 picture">
+              <div class="span4 picture" style='background-image: url("<?= base_url('images/stud4.jpg')?>")'>
 				<div class="well profile2" style="font-size:16px; color:black;">
-				  <div class="name"><b>Catherine Bautista</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <div class="name"><b>Andrea Felipe</b><br/><span class="label label-custom">On-going</span><br/><br/>
 				  <b>Php 10,000 to go | 23 donors</b><br/>
 				  <br/>
 					<div class="progress">
 					  <div style="width: 25%" class="bar bar-custom"></div>
-					</div><a href="<?= base_url("viewstudentdetails")?>" class="btn btn-custom">Donate</a>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/13")?>" class="btn btn-custom">Donate</a>
 				  </div>
 				</div>
 			  </div>
-             <div class="span4 picture2">
+             <div class="span4 picture" style='background-image: url("<?= base_url('images/stud5.jpg')?>")'>
 				<div class="well profile2" style="font-size:16px; color:black;">
-				  <div class="name"><b>Matthew Co</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <div class="name"><b>Johnrene Magalona</b><br/><span class="label label-custom">On-going</span><br/><br/>
 				  <b>Php 50,500 to go | 63 donors</b><br/>
 				  <br/>
 					<div class="progress">
 					  <div style="width: 60%" class="bar bar-custom"></div>
-					</div><a href="<?= base_url("viewstudentdetails")?>" class="btn btn-custom">Donate</a>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/14")?>" class="btn btn-custom">Donate</a>
 				  </div>
 				</div>
 			  </div>
-			  <div class="span4 picture3">
+			  <div class="span4 picture" style='background-image: url("<?= base_url('images/stud6.jpg')?>")'>
 				<div class="well profile2" style="font-size:16px; color:black;">
-				  <div class="name"><b>Martin Boribor</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <div class="name"><b>Ara Laranang</b><br/><span class="label label-custom">On-going</span><br/><br/>
 				  <b>Php 25,300 to go | 13 donors</b><br/>
 				  <br/>
 					<div class="progress">
 					  <div style="width: 40%" class="bar bar-custom"></div>
-					</div><a href="<?= base_url("viewstudentdetails")?>" class="btn btn-custom">Donate</a>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/15")?>" class="btn btn-custom">Donate</a>
+				  </div>
+				</div>
+			  </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div style="width:85%" class="container">
+              <div class="span4 picture" style='background-image: url("<?= base_url('images/stud7.jpg')?>")'>
+				<div class="well profile2" style="font-size:16px; color:black;">
+				  <div class="name"><b>Jenn Aguilar</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <b>Php 10,000 to go | 23 donors</b><br/>
+				  <br/>
+					<div class="progress">
+					  <div style="width: 25%" class="bar bar-custom"></div>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/16")?>" class="btn btn-custom">Donate</a>
+				  </div>
+				</div>
+			  </div>
+             <div class="span4 picture" style='background-image: url("<?= base_url('images/stud8.jpg')?>")'>
+				<div class="well profile2" style="font-size:16px; color:black;">
+				  <div class="name"><b>Joe Ferrer</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <b>Php 50,500 to go | 63 donors</b><br/>
+				  <br/>
+					<div class="progress">
+					  <div style="width: 60%" class="bar bar-custom"></div>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/17")?>" class="btn btn-custom">Donate</a>
+				  </div>
+				</div>
+			  </div>
+			  <div class="span4 picture" style='background-image: url("<?= base_url('images/stud9.jpg')?>")'>
+				<div class="well profile2" style="font-size:16px; color:black;">
+				  <div class="name"><b>Brian Dy</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <b>Php 25,300 to go | 13 donors</b><br/>
+				  <br/>
+					<div class="progress">
+					  <div style="width: 40%" class="bar bar-custom"></div>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/18")?>" class="btn btn-custom">Donate</a>
+				  </div>
+				</div>
+			  </div>
+            </div>
+          </div>
+		  <div class="item">
+            <div style="width:85%" class="container">
+              <div class="span4 picture" style='background-image: url("<?= base_url('images/stud10.jpg')?>")'>
+				<div class="well profile2" style="font-size:16px; color:black;">
+				  <div class="name"><b>Chan Arbon</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <b>Php 10,000 to go | 23 donors</b><br/>
+				  <br/>
+					<div class="progress">
+					  <div style="width: 25%" class="bar bar-custom"></div>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/19")?>" class="btn btn-custom">Donate</a>
+				  </div>
+				</div>
+			  </div>
+             <div class="span4 picture" style='background-image: url("<?= base_url('images/stud11.jpg')?>")'>
+				<div class="well profile2" style="font-size:16px; color:black;">
+				  <div class="name"><b>Chynna Cordevilla</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <b>Php 50,500 to go | 63 donors</b><br/>
+				  <br/>
+					<div class="progress">
+					  <div style="width: 60%" class="bar bar-custom"></div>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/20")?>" class="btn btn-custom">Donate</a>
+				  </div>
+				</div>
+			  </div>
+			  <div class="span4 picture" style='background-image: url("<?= base_url('images/stud12.jpg')?>")'>
+				<div class="well profile2" style="font-size:16px; color:black;">
+				  <div class="name"><b>Thea Cacatian</b><br/><span class="label label-custom">On-going</span><br/><br/>
+				  <b>Php 25,300 to go | 13 donors</b><br/>
+				  <br/>
+					<div class="progress">
+					  <div style="width: 40%" class="bar bar-custom"></div>
+					</div><a href="<?= base_url("viewstudentdetails/viewstudentinfo/21")?>" class="btn btn-custom">Donate</a>
 				  </div>
 				</div>
 			  </div>

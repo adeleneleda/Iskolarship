@@ -17,7 +17,10 @@ $(document).ready(function() {
 
 </script>
 <div class="span12">
-<a href="<?= base_url("editstudentprofile")?>" style="height:23px" class="btn btn-custom pull-right">Edit Profile</a>
+<span class="pull-right">
+<a href="<?= base_url("editstudentprofile")?>" style="height:23px" class="btn btn-custom">Edit Profile</a>
+<a href="<?= base_url("poststudentfeedback")?>" style="height:23px" class="btn btn-custom">Give Feedback</a>
+</span>
 <h2> Search scholarships </h2>
 <div class="container">
 	<div class="row-fluid">
@@ -94,9 +97,14 @@ $(document).ready(function() {
 			if(!empty($scholarships)) {
 				while($counter < sizeof($scholarships)) { ?>
 					<tr>
-					<td> <a href="<?= base_url('viewscholarshipdetails/loadscholarshipinfo/' . $scholarships[$counter]['scholarshipid'])?>" > <?php echo $scholarships[$counter]['title']; ?> </a></td>
-					<!--<td> <?php echo $scholarships[$counter]['description']; ?> </td>
-					</tr>-->
+					<td><h2><a href="<?= base_url('viewscholarshipdetails/loadscholarshipinfo/' . $scholarships[$counter]['scholarshipid'])?>" > <?php echo $scholarships[$counter]['title']; ?> </a></h2>
+					
+					<?php echo $scholarships[$counter]['description']; ?> 
+					<br/>
+					<br/>
+					</td>
+					
+					</tr>
 				<?php
 					$counter++;
 				}

@@ -120,9 +120,9 @@
 						</div>
 					</div><!-- /navbar-inner -->
 			  </div><!-- /navbar -->
-			  <div class="banner" align="center" style="padding:0px">
+			  <div align="center" style="padding:0px;">
 				<br/>
-				<a href="<?= base_url("")?>"><img src="<?= base_url('assets/img/header.jpg')?>"></img></a>
+				<a href="<?= base_url("")?>"><img src="<?= base_url('assets/img/header-small.jpg')?>"></img></a>
 				<br/>
 				<hr/>
 			</div>

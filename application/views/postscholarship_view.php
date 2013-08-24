@@ -142,7 +142,7 @@ $(document).ready(function() {
 	</div>
 	
 	<div class="span6 well">
-		<div><input class="btn btn-primary" type="submit" value="CREATE SCHOLARSHIP"></div>
+		<div><input class="btn btn-custom btn-large" type="submit" value="Create Scholarship"></div>
 	</div>
 	</form>
 	

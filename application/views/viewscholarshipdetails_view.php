@@ -83,7 +83,7 @@
 		</tr>
 		<tr>
 			<td>
-				Slot:
+				Slots:
 			</td>
 			<td style="padding-left:20px">
 				<?=$scholarshipinfo['slots']?>
@@ -102,7 +102,7 @@
 		<input type="file" name="reqtfile" id="reqtfile"/>	
 		<br/><br/>
 		<center>
-		<input type="submit" value = "Apply"/>
+		<input class="btn btn-custom btn-large" type="submit" value = "Apply"/>
 		</center>
 	</form>
 	

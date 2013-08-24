@@ -11,8 +11,14 @@ class Home extends Main_Controller {
 		$username = $this->session->userdata("username");
 		$role = $this->session->userdata("role");
 		if(empty($username)) $this->load_view('home-view');
-		else if($role == "student") $this->load_view('searchscholarship_view');
-		else if($role == "donor") $this->load_view('sponsorhomepage_view');
+		else if($role == "student") {
+			header("Location: searchscholarship");
+			die();	
+		}
+		else if($role == "donor") {
+			header("Location: sponsorhomepage");
+			die();	
+		}
 	}
    
     public function login() {

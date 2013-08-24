@@ -69,8 +69,7 @@ table.wide, table.wide tr, table.wide td {
 }
 
 .picture {
-	background-image: url("../../images/1.jpg");
-	height: 455px;
+	height: 440px;
 	width: 250px;
 	padding-top: 260px;
 	margin-bottom: 10px;
@@ -92,16 +91,8 @@ table.wide, table.wide tr, table.wide td {
 	margin-bottom: 10px;
 }
 
-.profile2 {
-	background-color: rgba(255,255,255,.6);
-}
-
 .desc {
 	background-color: rgba(255,255,255,.6);
-}
-
-.profile2:hover {
-	background-color: rgba(255,255,255,.8);
 }
 
 br {
