@@ -10,7 +10,7 @@ class sponsorhomepage_model extends Base_Model {
 	
 	public function get_scholarships($donorid) {
 		//query para makuha lahat ng scholarships ng isang sponsor account
-		$results = $this->db->query('SELECT * from scholarships where donorid = ' .$donorid); 
+		$results = $this->db->query('SELECT * from scholarships where isactive AND donorid = ' .$donorid); 
 		$results = $results->result_array();
 		
 		return $results;

@@ -1,0 +1,7 @@
+
+mga statement panggawa ng user account
+
+insert into persons (lastname) values ('DAN SPONSOR ACCT');
+select lastval();
+insert into users (personid, login, password) values (5, 'sponsordan', 'sponsordan');
+insert into donors (personid, description) values (5, 'test sponsor acct');
