@@ -60,7 +60,7 @@ class EditStudentProfile extends CI_Controller {
             move_uploaded_file($_FILES["dpfile"]["tmp_name"], "studentprofilepictures/" . $studid . "_profilepicture." . $extension);
         }
             
-        $this->load_view('signedup_view');
+        $this->load_view('searchscholarship_view');
     }
     
     public function index()

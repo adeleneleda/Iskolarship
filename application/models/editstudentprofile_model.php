@@ -65,24 +65,58 @@ class EditStudentProfile_Model extends Base_Model {
             $value = '\'' . $value . '\'';
         }
         
-        $this->db->query('UPDATE students SET yearlevel = ' . $details['yearlevel'] . ', programid = ' . $details['program'] . ', 
-                        familyincome = ' . $details['familyincome'] . ', reasonforneedingscholarship = ' . $details['reason'] . ', 
-                        targetmoney = ' . $details['targetmoney'] . ', bankid = ' . $details['bank'] . ', accountnumber = ' . $details['accountnumber'] . ', 
-                        runninggwa = ' . $details['runninggwa'] . ', studentdescription = ' . $details['studentdescription']  
-                        . ' WHERE studentid = ' . $studentid . ';');
+        $pending = $this->db->query('SELECT ispending, isapproved from students WHERE studentid = ' . $studentid . ';');
+        $pending = $pending->result_array();
+        $approved = $pending[0]['isapproved'];
+        $pending = $pending[0]['ispending'];
         
-        if($this->db->query('SELECT * from contactdetails WHERE personid = ' . $pid . ' and contacttypeid = 1;')->num_rows() > 0)
+        
+        
+        if($pending == 't' and $approved == 'f')
         {
-            $this->db->query('UPDATE contactdetails SET contactinfo = ' . $details['mobilenumber'] . ' WHERE personid = ' . $pid . ' and contacttypeid = 1;');
+            $this->db->query('UPDATE students SET yearlevel = ' . $details['yearlevel'] . ', programid = ' . $details['program'] . ', familyincome = ' . $details['familyincome'] . ', reasonforneedingscholarship = ' . $details['reason'] . ', targetmoney = ' . $details['targetmoney'] . ', bankid = ' . $details['bank'] . ', accountnumber = ' . $details['accountnumber'] . ', runninggwa = ' . $details['runninggwa'] . ', studentdescription = ' . $details['studentdescription'] . ' WHERE studentid = ' . $studentid . ';');
+         
+        }
+        else
+        {
+            if($this->db->query('SELECT * FROM studentspending WHERE studentid = ' . $studentid . ';')->num_rows() > 0)
+            {
+                $this->db->query('UPDATE studentspending SET yearlevel = ' . $details['yearlevel'] . ', programid = ' . $details['program'] . ', familyincome = ' . $details['familyincome'] . ', reasonforneedingscholarship = ' . $details['reason'] . ', targetmoney = ' . $details['targetmoney'] . ', bankid = ' . $details['bank'] . ', accountnumber = ' . $details['accountnumber'] . ', runninggwa = ' . $details['runninggwa'] . ', studentdescription = ' . $details['studentdescription'] . ' WHERE studentid = ' . $studentid . ';');
+                $this->db->query('UPDATE students SET ispending = true WHERE studentid = ' . $studentid . ';');
+            }
+            else
+            {
+                $this->db->query('INSERT into studentspending(studentid, yearlevel, personid, programid, familyincome, reasonforneedingscholarship, targetmoney, bankid, accountnumber, runninggwa, studentdescription) values (' . $studentid . ', ' . $details['yearlevel'] . ', ' . $pid . ', ' . $details['program'] . ', ' . $details['familyincome'] . ', ' . $details['reason'] . ', ' . $details['targetmoney'] . ', ' . $details['bank'] . ', ' . $details['accountnumber'] . ', ' . $details['runninggwa'] . ', ' . $details['studentdescription'] . ');');
+                $this->db->query('UPDATE students SET ispending = true WHERE studentid = ' . $studentid . ';');
+            }
+        }
+        
+        if(($this->db->query('SELECT * from contactdetails WHERE personid = ' . $pid . ' and contacttypeid = 1;')->num_rows() > 0) or !($pending == 't' and $approved == 'f'))
+        {
+            if($this->db->query('SELECT * from contactdetailspending WHERE personid = ' . $pid . ' and contacttypeid = 1;')->num_rows() > 0)
+            {
+                $this->db->query('UPDATE contactdetailspending SET contactinfo = ' . $details['mobilenumber'] . ' WHERE personid = ' . $pid . ' and contacttypeid = 1;');
+            }
+            else
+            {
+                $this->db->query('INSERT INTO contactdetailspending(contacttypeid, personid, contactinfo) values(1, ' . $pid . ', ' . $details['mobilenumber'] . ');');
+            }
         }
         else
         {
             $this->db->query('INSERT INTO contactdetails(contacttypeid, personid, contactinfo) values(1, ' . $pid . ', ' . $details['mobilenumber'] . ');');
         }
         
-        if($this->db->query('SELECT * from contactdetails WHERE personid = ' . $pid . ' and contacttypeid = 2;')->num_rows() > 0)
+        if(($this->db->query('SELECT * from contactdetails WHERE personid = ' . $pid . ' and contacttypeid = 2;')->num_rows() > 0) or !($pending == 't' and $approved == 'f'))
         {
-            $this->db->query('UPDATE contactdetails SET contactinfo = ' . $details['emailadd'] . ' WHERE personid = ' . $pid . ' and contacttypeid = 2;');
+            if($this->db->query('SELECT * from contactdetailspending WHERE personid = ' . $pid . ' and contacttypeid = 2;')->num_rows() > 0)
+            {
+                $this->db->query('UPDATE contactdetailspending SET contactinfo = ' . $details['emailadd'] . ' WHERE personid = ' . $pid . ' and contacttypeid = 2;');
+            }
+            else
+            {
+                $this->db->query('INSERT INTO contactdetailspending(contacttypeid, personid, contactinfo) values(2, ' . $pid . ', ' . $details['emailadd'] . ');');
+            }
         }
         else
         {
