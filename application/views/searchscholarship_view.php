@@ -85,7 +85,7 @@ $(document).ready(function() {
 				</tr>
 			</tbody>
 		</table>
-		<input class="btn btn-primary" type="submit" value="SEARCH">
+		<input class="btn btn-custom" type="submit" value="Search">
 	</form>
 	</div>
 	

@@ -58,8 +58,9 @@ function validateForm(){
 }
 </script>
 <div class="span12">
+	<a href="<?= base_url("sponsorhomepage")?>" style="height:23px; margin-top:10px;" class="btn btn-custom pull-right">Back to sponsor homepage</a>
+	<h1>Student Search</h1><hr>
 	<div class="span4 well">
-		<h3>Student Search</h3><hr>
 		<h4>Filters</h4>
 		<form method="POST" action="<?= base_url('searchstudents') ?>" enctype="multipart/form-data" name="trueform" onsubmit="return validateForm()">
 		<table>
@@ -117,7 +118,7 @@ function validateForm(){
 				</td>
 			</tr>
 		</table><br/>
-		<input class="btn btn-info span2" type="submit" name="Search" value="Search" id="submiter">
+		<input class="btn btn-custom span2" type="submit" name="Search" value="Search" id="submiter">
 		</form>
 	</div>
 	<div class="span5 well">
@@ -130,7 +131,7 @@ function validateForm(){
 				echo "
 					<table>
 						<tr>
-							<td rowspan=4 class='span1'><img src='" .  site_url($segments). "''/></td>
+							<td rowspan=4 class='span1'><img style='height:100px; width:130px' src='" .  site_url($segments). "''/></td>
 							<td>&nbsp</td>
 							<td><b><a href='" . site_url($segment) . "'>" . $rows['firstname'] . " " . $rows['lastname'] . "</a></b></td>
 						</tr>

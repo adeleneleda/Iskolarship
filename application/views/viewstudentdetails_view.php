@@ -81,6 +81,14 @@
 				<td><?=$studentinfo['birthday']?><br/></td>
 				</tr>
 				<tr>
+				<td><b>Current Address: </b></td>
+				<td><br/></td>
+				</tr>
+				<tr>
+				<td><b>Provincial Address: </b></td>
+				<td><br/></td>
+				</tr>
+				<tr>
 				<td><b>Degree Program: </b></td>
 				<td><?=$studentinfo['name']?><br/></td>
 				</tr>

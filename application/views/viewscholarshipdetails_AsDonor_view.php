@@ -10,8 +10,8 @@
 	}
 </script>
 
-<a href="<?= base_url("sponsorhomepage")?>" style="height:23px" class="btn btn-custom pull-right">Back to sponsor homepage</a>
 <div class="span12">
+	<a href="<?= base_url("sponsorhomepage")?>" style="height:23px; margin-top:10px;" class="btn btn-custom pull-right">Back to sponsor homepage</a>
 	<h1><?=$scholarshipinfo['title']?></h1>
 	<hr/>
 	<div class="well">

@@ -1,15 +1,25 @@
 <div class="span12">
-<a href="<?= base_url('postscholarship')?>" style="height:23px;" class="btn btn-custom">Create scholarship</a>
-<a href="<?= base_url('searchstudents')?>" style="height:23px;" class="btn btn-custom">Search students</a>
-
+<div style="height:400px; background:url('<?= base_url('images/studentgrid.png')?>'); background-size:1180px 400px; text-align:center">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<a href="<?= base_url('postscholarship')?>" class="btn btn-custom btn-xlarge">Create Scholarship</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="<?= base_url('searchstudents')?>" class="btn btn-custom btn-xlarge">Search Students</a>
+</div>
 <br>
 <br>
-<div class="well" style="padding-top:10px">
-<br/>
-<h4> Posted scholarships </h4>
-<br/>
+<h1> Posted Scholarships </h1>
+<hr/>
 <div style="padding:10px;padding-top:0px">
-<table class="table" >
+<table class="table table-hover table-bordered">
 	<tr class="orange">
 		<th width="40%">Title</th>
 		<th>Description</th>
@@ -37,6 +47,5 @@
 	<tr> No scholarships found </tr>
 	<?php } ?>		
 </table>
-</div>
 </div>
 </div>

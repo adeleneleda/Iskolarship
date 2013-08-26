@@ -22,7 +22,7 @@ class postscholarship_model extends Base_Model {
 		return $results;
 	}
 	
-	public function postScholarship2db($xtitle, $xdescription, $xprogram, $xgender, $xyearlv, $xmaxincome) {
+	public function postScholarship2db($xtitle, $xdescription, $xprograms, $xgender, $xyearlvs, $xmaxincome, $xminincome, $xmaxgwa, $xmingwa) {
 		
 		$title = '\'' .$xtitle. '\'';
 		$description = '\'' .$xdescription. '\'';
@@ -37,9 +37,11 @@ class postscholarship_model extends Base_Model {
 		$scholarshipid = $scholarshipidx[0]['scholarshipid'];
 		
 		#handle each optional flag
-		if($xprogram) {
-			$xprogram = '\'' .$xprogram. '\'';
-			$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 1, ' .$xprogram. ')');
+		foreach ($xprograms as $xprogram) {
+			if($xprogram) {
+				$xprogram = '\'' .$xprogram. '\'';
+				$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 1, ' .$xprogram. ')');
+			}
 		}
 		
 		if($xgender) {
@@ -47,14 +49,31 @@ class postscholarship_model extends Base_Model {
 			$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 2, ' .$xgender. ')');
 		}
 		
-		if($xyearlv) {
-			$xyearlv = '\''. $xyearlv. '\'';
-			$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 3, ' .$xyearlv. ')');
+		foreach ($xyearlvs as $xyearlv) {
+			if($xyearlv) {
+				$xyearlv = '\''. $xyearlv. '\'';
+				$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 3, ' .$xyearlv. ')');
+			}
 		}
 		
 		if($xmaxincome) {
 			$xmaxincome = '\''. $xmaxincome. '\'';
 			$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 4, ' .$xmaxincome. ')');
+		}
+		
+		if($xminincome) {
+			$xminincome = '\''. $xminincome. '\'';
+			$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 5, ' .$xminincome. ')');
+		}
+		
+		if($xmingwa) {
+			$xmingwa = '\''. $xmingwa. '\'';
+			$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 6, ' .$xmingwa. ')');
+		}
+		
+		if($xmaxgwa) {
+			$xmaxgwa = '\''. $xmaxgwa. '\'';
+			$this->db->query('INSERT into scholarshiprequirements(scholarshipid, requirementtypeid, requirement) values(' .$scholarshipid . ', 7, ' .$xmaxgwa. ')');
 		}
 		
 		return $scholarshipid;
