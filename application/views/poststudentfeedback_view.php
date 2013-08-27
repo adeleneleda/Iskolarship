@@ -13,6 +13,10 @@ $( "#birthday" ).datepicker();
             <div class="span10 well">
 				<form method="post" action="<?= base_url('poststudentfeedback/submitstudentfeedback')?>" enctype="multipart/form-data">
                 <h2> Scholarship Feedback </h2>
+				Your feedback matters! Feel free to share your experience with your scholarships.
+				<?if(count($scholarships) == 0) {?>
+					<br/><br/><font color="red">You haven't received any scholarships yet.</font>
+				<?}?>
 				<hr/>
                 <label> Scholarship: </label>
                 <select name = "awardedscholarshipid">
@@ -27,7 +31,7 @@ $( "#birthday" ).datepicker();
 				</textarea>
 				</br>
 				<br/>
-				<input class="btn btn-custom" type = "submit" value="Give Feedback"/>
+				<input class="btn btn-custom" type = "submit" <?=count($scholarships) == 0 ? "disabled" : ""?> value="Give Feedback"/>
 				</form>
               </div>
         </div>
