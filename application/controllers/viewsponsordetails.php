@@ -25,5 +25,4 @@ class Viewsponsordetails extends Main_Controller {
 		$scholarsfeedback = $this->Model->getscholarfeedback($donorid);
 		$this->load_view('viewsponsordetails_view', compact('basicinfo', 'currentscholarships', 'pastscholarshipsandscholars', 'scholarsfeedback'));
 	}
-	
 }
