@@ -7,9 +7,10 @@ class PostStudentFeedback extends CI_Controller {
 	}    
     public function index()
     {
-		$studentid = 1;
+		//$studentid = 1;
+		$studentid = $this->session->userdata("studentid");;
 		$scholarships = $this->Model->getscholarships($studentid);
-        $this->load_view('poststudentfeedback_view', compact('scholarships'));
+        $this->load_view('poststudentfeedback_view', compact('scholarships', 'studentid'));
     }
 	
 	public function submitstudentfeedback() {
