@@ -66,5 +66,4 @@ class Viewscholarshipdetails extends Main_Controller {
 	
 	
 
-	
 }
