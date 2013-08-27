@@ -6,85 +6,66 @@
 	<hr/>
 	<h4>Scholarship Information</h4>
 	<div style="padding-left:10px">
-	<?$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?><br/>
-				
-	<table>
+	<table class="wide table table-bordered tablesorter tablesorter-bootstrap table-striped table-hover" style="width:65%">
 		<tr>
-			<td>
+			<th style="width:25%">
 				Scholarship Name:
-			</td>
+			</th>
 			<td style="padding-left:20px">
 				<?=$scholarshipinfo['title']?>
 			</td>
 		</tr>
-		<!--<tr>
-			<td>
+		<tr>
+			<th>
 				Description:
-			</td>
+			</th>
 			<td style="padding-left:20px">
 				<?=$scholarshipinfo['sdesc']?>
 			</td>
-		</tr>-->
+		</tr>
 	</table>
 	</div>
-	
-	<br/>
-	<!--<h4>Donor Information</h4>
+
+	<?$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?><br/>
+	<h4>Donor Information</h4>
 	<div style="padding-left:10px">
-	<?//$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?><br/>			
-	<table>
+	<?//$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?>		
+	<table style="width:65%" class="wide table table-bordered tablesorter tablesorter-bootstrap table-striped table-hover">
 		<tr>
-			<td>
+			<th style="width:25%">
 				Donor:
-			</td>
+			</th>
 			<td style="padding-left:20px">
-				<?//=implode($fullname, " ");?>
-				Philweb - Globe Partnership
+				<a href="<?= base_url('viewsponsordetails/index/'.$scholarshipinfo['donorid'])?>"><?=implode($fullname, " ");?></a>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<th>
 				Donor Details:
-			</td>
+			</th>
 			<td style="padding-left:20px">
 				<?=$scholarshipinfo['ddesc']?>
 			</td>
 		</tr>
-		<tr>
-			<td>
-				Expiry:
-			</td>
-			<td style="padding-left:20px">
-				<?=$scholarshipinfo['expiry']?>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Expiry:
-			</td>
-			<td style="padding-left:20px">
-				<?=$scholarshipinfo['slots']?>
-			</td>
-		</tr>
 	</table>
-	</div>-->
+	</div>
 	<br/>
 	<h4>Scholarship Availability</h4>
 	<div style="padding-left:10px">
-	<?$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?><br/>		
-	<table>
+	<?$fullname = array($scholarshipinfo['firstname'], $scholarshipinfo['middlename'], $scholarshipinfo['lastname'], $scholarshipinfo['namesuffix']);?>		
+	<table style="width:65%" class="wide table table-bordered tablesorter tablesorter-bootstrap table-striped table-hover">
 		<tr>
-			<td>
+			<th style="width:25%">
 				Deadline:
-			</td>
+			</th>
 			<td style="padding-left:20px">
 				<?=$scholarshipinfo['expiry']?>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<th>
 				Slots:
-			</td>
+			</th>
 			<td style="padding-left:20px">
 				<?=$scholarshipinfo['slots']?>
 			</td>
@@ -98,7 +79,9 @@
 	</div>
 	<form method="post" action="<?= base_url('viewscholarshipdetails/applyforscholarship')?>" enctype="multipart/form-data">
 		<input type="hidden" name = "scholarshipid" value = "<?=$scholarshipid?>"/>
-		<label for="reqtfile"><h4>Requirements</h4></label>
+		<br/>
+		<br/>
+		<label for="reqtfile"><h4>Attach Requirements</h4></label>
 		<input type="file" name="reqtfile" id="reqtfile"/>	
 		<br/><br/>
 		<center>

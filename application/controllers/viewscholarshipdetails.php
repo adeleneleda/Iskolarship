@@ -9,7 +9,7 @@ class Viewscholarshipdetails extends Main_Controller {
 	
 	public function index()
 	{
-		$this->loadscholarshipinfo();
+		$this->loadscholarshipinfo(1);
 	}
 	
 	public function loadscholarshipinfo($scholarshipid) {

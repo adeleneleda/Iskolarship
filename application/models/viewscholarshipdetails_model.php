@@ -7,7 +7,7 @@ class Viewscholarshipdetails_model extends Base_Model {
    }
    
 	public function loadscholarshipdetails($scholarshipid) {
-	$query = "select scholarshipid, title, scholarships.description as sdesc, firstname, lastname, middlename, namesuffix, donors.description as ddesc, expiry, slots
+	$query = "select scholarshipid, title, scholarships.description as sdesc, donorid, firstname, lastname, middlename, namesuffix, donors.description as ddesc, expiry, slots
 	FROM scholarships join donors using (donorid) join persons using (personid) where scholarshipid = ".$scholarshipid.";";
 	$results = $this->db->query($query);
 	if($results->num_rows() > 0)

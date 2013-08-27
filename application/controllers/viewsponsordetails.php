@@ -7,7 +7,7 @@ class Viewsponsordetails extends Main_Controller {
 		$this->load->model('Viewsponsordetails_Model', 'Model');
 	}
 	
-   public function index()
+   public function index($donorid)
 	{	
 		/*echo "<br/><br/>";
 		print_r($this->Model->getbasicinfo(1));
@@ -18,7 +18,7 @@ class Viewsponsordetails extends Main_Controller {
 		echo "<br/><br/>";
 		print_r($this->Model->getscholarfeedback(1));*/
 		
-		$donorid = 1;
+		//$donorid = 1;
 		$basicinfo = $this->Model->getbasicinfo($donorid);
 		$currentscholarships = $this->Model->getcurrentscholarships($donorid);
 		$pastscholarshipsandscholars = $this->Model->getpastscholarshipswithwinners($donorid);
