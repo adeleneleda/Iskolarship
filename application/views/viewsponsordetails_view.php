@@ -1,3 +1,40 @@
+<style type="text/css">
+.callout {
+    position: relative;
+    margin: 18px 0;
+    padding: 18px 20px;
+    background-color: #FFE6CC;
+    /* easy rounded corners for modern browsers */
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+.callout .notch {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    margin: 0;
+    border-top: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #FFE6CC;
+    padding: 0;
+    width: 0;
+    height: 0;
+    /* ie6 height fix */
+    font-size: 0;
+    line-height: 0;
+     /* ie6 transparent fix */
+    _border-right-color: pink;
+    _border-left-color: pink;
+    _filter: chroma(color=pink);
+}
+
+.border-callout { border: 1px solid #FFCE99; padding: 17px 19px; }
+.border-callout .border-notch { border-bottom-color: #FFCE99; top: -11px; }
+
+</style>
+
 <div class="span12">
 	<div class="well">
 		<h2><?=$basicinfo['firstname'].' '.$basicinfo['lastname']?></h2>
@@ -38,12 +75,21 @@
 		<h3>Student Feedback</h3>
 			<?if(!empty($scholarsfeedback)) {
 				foreach($scholarsfeedback as $indiv_feedback) {?>
+					<?/*?>
 					<?=$indiv_feedback['firstname'].' '.$indiv_feedback['lastname']?><br/>
 					<?=$indiv_feedback['name']?><br/>
 					<?=$indiv_feedback['title']?><br/>
 					<?=$indiv_feedback['insertedon']?><br/>
 					<?=$indiv_feedback['feedback']?><br/>
 					<br/><br/>
+					<?*/?>
+					<div class="callout border-callout">
+					<?=$indiv_feedback['firstname'].' '.$indiv_feedback['lastname']?> (<?=$indiv_feedback['name']?>) wrote on <?=$indiv_feedback['insertedon']?>:<br/>
+					<strong><?=$indiv_feedback['feedback']?></strong><br/>
+					<b class="border-notch notch"></b>
+					<b class="notch"></b>
+					</div>
+					
 			<?}} else {?>
 				<table class="wide table table-bordered tablesorter tablesorter-bootstrap table-striped table-hover">
 					<tr>
