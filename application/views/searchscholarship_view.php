@@ -19,7 +19,7 @@ $(document).ready(function() {
 <div class="span12">
 <span class="pull-right">
 <a href="<?= base_url("editstudentprofile")?>" style="height:23px" class="btn btn-custom">Edit Profile</a>
-<a href="<?= base_url("poststudentfeedback")?>" style="height:23px" class="btn btn-custom">Give Feedback</a>
+<a href="<?= base_url("poststudentfeedback")?>" style="height:23px" class="btn btn-custom">Give Scholarship Feedback</a>
 </span>
 <h2> Search scholarships </h2>
 <div class="container">
