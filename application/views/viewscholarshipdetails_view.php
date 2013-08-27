@@ -1,4 +1,3 @@
-
 <div class="span12">
 <div class="well">
 	<!--<img src="<?= base_url("images/globe.jpg")?>"/>-->
@@ -81,7 +80,7 @@
 		<input type="hidden" name = "scholarshipid" value = "<?=$scholarshipid?>"/>
 		<br/>
 		<br/>
-		<label for="reqtfile"><h4>Attach Requirements</h4></label>
+		<h4>Attach Requirements</h4>
 		<input type="file" name="reqtfile" id="reqtfile"/>	
 		<br/><br/>
 		<center>
@@ -91,3 +90,5 @@
 	
 </div>
 </div>
+
+
