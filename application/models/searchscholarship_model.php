@@ -21,44 +21,46 @@ class searchscholarship_model extends Base_Model {
 	}
 	
 	public function conductsearch($xprogram, $xgender, $xyearlv, $xmaxincome) {
-		$whereclause = "";
+	
+		#get all active scholarships
+		$masterquery = 'SELECT scholarshipid, title, description from scholarships where isactive';
+		
+		
+		#then for each optional field checked, intersect
+	
 		if($xprogram) {
-			//$programid ---> GET VALUE NG GUSTO
-			if($whereclause != "") {
-				$whereclause =$whereclause." and ";
-			}
-			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 1 and requirement = '".$xprogram."')";
+			$xprogram = "'" . $xprogram . "'";
+			
+			$masterquery = $masterquery . ' INTERSECT SELECT scholarshipid, title, description 
+			from scholarshiprequirements join scholarships using (scholarshipid)
+			where isactive AND requirementtypeid = 1 AND requirement = ' . $xprogram;
 		}
 		
 		if($xgender) {
-			//$gender --- get also.
-			if($whereclause != "") {
-				$whereclause =$whereclause." and ";
-			}
-			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 2 and requirement = '".$xgender."')";
+			$xgender = "'" . $xgender . "'";
+			
+			$masterquery = $masterquery . ' INTERSECT SELECT scholarshipid, title, description
+			from scholarshiprequirements join scholarships using (scholarshipid)
+			where isactive AND requirementtypeid = 2 AND requirement = ' . $xgender;
+			
 		}
 		
 		if($xyearlv) {
-			//$yearlevel --- get also.
-			if($whereclause != "") {
-				$whereclause =$whereclause." and ";
-			}
-			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 4 and requirement = '".$xyearlv."')";
+			$xyearlv = "'" . $xyearlv . "'";
+			
+			$masterquery = $masterquery . ' INTERSECT SELECT scholarshipid, title, description
+			from scholarshiprequirements join scholarships using (scholarshipid)
+			where isactive AND requirementtypeid = 4 AND requirement = ' . $xyearlv;
 		}
 		if($xmaxincome) {
-			//$maxincome --- get also.
-			if($whereclause != "") {
-				$whereclause =$whereclause." and ";
-			}
-			$whereclause = $whereclause."scholarshipid in (select scholarshipid from scholarshiprequirements where requirementtypeid = 3 and requirement = '".$xmaxincome."')";
+			$xmaxincome = "'" . $xmaxincome . "'";
+			
+			$masterquery = $masterquery . ' INTERSECT SELECT scholarshipid, title, description
+			from scholarshiprequirements join scholarships using (scholarshipid)
+			where isactive AND requirementtypeid = 3 AND requirement = ' . $xmaxincome;
 		}
-		$whereclause = $whereclause." and true";
-		#echo 'SELECT scholarshipid, title from scholarships where '.$whereclause;
-		#die();
-		#query to get all scholarships
-		#$query = 'SELECT scholarshipid, title from scholarships where '.$whereclause;
-		$query = 'SELECT scholarshipid, title, description from scholarships';
-		$results = $this->db->query($query);
+
+		$results = $this->db->query($masterquery);
 		$results = $results->result_array();
 		return $results;
 	}
