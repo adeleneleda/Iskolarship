@@ -9,35 +9,61 @@ function validateForm() {
 	var x = document.forms["trueform"];
 	var z;
 	
-	if (document.getElementById("income_cb").checked) {
-		z = parseInt(x["max_income"].value, 10);
+	//check for title
+	if (!x["title"].value) {
+		alert("Please put a title");
+		return false;
+	}
+	
+	////check for valid deadline -- hintayin mo na lang si Chan
+	if (!x["deadline"].value) {
+		alert("Please put a deadline");
+		return false;
+	}
+
+	//check for positive integer slots
+	if (x["slots"].value) {
+		z = parseInt(x["slots"].value,10);
 		if (z <= 0 || isNaN(z)) {
-			alert("Please verify the max income");
+			alert("Please verify the number of available slots");
 			return false;
 		}
 		else {
-			//alert(z);
-			document.getElementById("income_input").value = z;
+			document.getElementById("slots").value = z;
 		}
 	}
 	
+	//check for income
+	// if (document.getElementById("income_cb").checked) {
+		// z = parseInt(x["max_income"].value, 10);
+		// if (z <= 0 || isNaN(z)) {
+			// alert("Please verify the max income");
+			// return false;
+		// }
+		// else {
+			// //alert(z);
+			// document.getElementById("income_input").value = z;
+		// }
+	// }
+	
+	//check for file
 	if (document.getElementById("file").value == "") {
 		alert("Please select an input file");
 		return false;
 	}
 	
+	//check for pdf
 	var f = document.getElementById("file");
 	var filename = f.value;
 	var ext = filename.substring(filename.lastIndexOf('.') + 1);
 	ext = ext.toLowerCase();
 	
-	if(ext == "pdf") {
-		return true;
-	}
-	else {
+	if(ext != "pdf") {
 		alert("Please upload a pdf file.");
 		return false;
 	}
+	
+	return true;
 }
 
 $(document).ready(function() { 
@@ -203,7 +229,7 @@ $(document).ready(function() {
 				<tr>
 					<td> <label class="checkbox"><input id="gwa_cb" type="checkbox" name="gwa_cb"/>GWA</label></td>
 					<td id="gwa_choice" style="display:none">
-						<input id="mingwa_input" type="text" placeholder="Min. GWA" name="max_gwa"/> <br/>
+						<input id="mingwa_input" type="text" placeholder="Min. GWA" name="min_gwa"/> <br/>
 						<input id="maxgwa_input" type="text" placeholder="Max. GWA" name="max_gwa"/> 
 					</td>
 				</tr>
