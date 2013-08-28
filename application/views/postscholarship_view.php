@@ -155,6 +155,10 @@ $(document).ready(function() {
 			<input type="text" name="title" style="height:50px; width:500px; font-size:20px"/>
 			<h4> Description </h4>
 			<textarea placeholder="Description" name="description" type="text" style="height:200px; width:500px;"></textarea>
+			<h5> Deadline (mm/dd/yy) <h5>
+			<input type="text" name="deadline" style="height:23px;width:125px"/>
+			<h5> Slots <h5>
+			<input type="text" id= "slots" name="slots" style="height:23px;width:50px"/>
 		</div>
 	
 	
