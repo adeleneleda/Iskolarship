@@ -172,6 +172,7 @@ $(document).ready(function() {
 					<td> 
 						<?for ($i = 1; $i <= $MAX_FIELDS; $i++) {?>
 						<select id="degree_choice<?=$i?>" style="display:none" name="degree_choice<?=$i?>">
+							<option selected value=""> Choose a program </option>
 						<?php 
 							$ctr = 0;
 							while(!empty($programs[$ctr]))
@@ -205,6 +206,7 @@ $(document).ready(function() {
 					<td>
 						<?for ($i = 1; $i <= $MAX_YEARFIELDS; $i++) {?>
 						<select id="year_choice<?=$i?>" style="display:none" name="year_choice<?=$i?>">
+							<option selected value=""> Choose a year level </option>
 						<?php 
 							$ctr = 0;
 							while(!empty($yearlevels[$ctr]))
