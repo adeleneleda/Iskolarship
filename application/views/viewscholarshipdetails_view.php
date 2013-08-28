@@ -31,6 +31,7 @@
 				?>
 			</td>
 		</tr>
+		<?php } ?>
 		<tr>
 			<th>
 				Description:
@@ -107,5 +108,3 @@
 	
 </div>
 </div>
-
-
