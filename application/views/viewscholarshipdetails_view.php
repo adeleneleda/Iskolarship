@@ -14,6 +14,23 @@
 				<?=$scholarshipinfo['title']?>
 			</td>
 		</tr>
+		<?php if(!empty($scholarshipinfo['tags'])) { ?>
+		<tr>
+			<td>
+				Tags:
+			</td>
+			<td style="padding-left:20px">
+				<?php
+				
+					$i = 0;
+					while($i < sizeof($scholarshipinfo['tags'])) {
+						echo '<b>'.$scholarshipinfo['tags'][$i]['reqtype'] . '</b> ' . $scholarshipinfo['tags'][$i]['reqval'];
+						echo '<br>';
+						$i++;
+					}
+				?>
+			</td>
+		</tr>
 		<tr>
 			<th>
 				Description:
