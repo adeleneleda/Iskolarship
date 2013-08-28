@@ -29,6 +29,8 @@ class searchscholarship extends CI_Controller {
 		#end: optional tags
 		
 		$scholarships = $this->Model->conductsearch($xprogram, $xgender, $xyearlv, $xmaxincome);
+		$programs = $this->Model->get_programs();
+        $yearlevels = $this->Model->get_yearlevels();
 		$this->load_view('searchscholarship_view', compact('scholarships'));
 	}
 }
