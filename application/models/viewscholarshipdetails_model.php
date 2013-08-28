@@ -13,6 +13,13 @@ class Viewscholarshipdetails_model extends Base_Model {
 	if($results->num_rows() > 0)
 		{
 			$temp = $results->result_array();
+			$tags = $this->db->query('SELECT x.description as reqtype, getreqvalue(requirementtypeid, requirement) as reqval
+					from scholarships
+					join scholarshiprequirements using (scholarshipid) 
+					join requirementtypes x using (requirementtypeid)
+					where scholarshipid = ' .$scholarshipid);
+			$tags = $tags->result_array();
+			$temp[0]['tags'] = $tags;
 			return $temp[0];
 		}
 	return false;
