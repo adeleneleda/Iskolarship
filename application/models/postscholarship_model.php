@@ -22,14 +22,17 @@ class postscholarship_model extends Base_Model {
 		return $results;
 	}
 	
-	public function postScholarship2db($xtitle, $xdescription, $xprograms, $xgender, $xyearlvs, $xmaxincome, $xminincome, $xmaxgwa, $xmingwa) {
+	public function postScholarship2db($xtitle, $xdescription, $xdeadline, $xslots, $xprograms, $xgender, $xyearlvs, $xmaxincome, $xminincome, $xmaxgwa, $xmingwa) {
 		
 		$title = '\'' .$xtitle. '\'';
 		$description = '\'' .$xdescription. '\'';
+		$deadline = '\'' .$xdeadline. '\'';
+		$slots = $xslots;
 		
 		
 		#insert the title and description (these are required?)
-		$this->db->query('INSERT into scholarships (title, description, donorid) values(' .$title. ',' .$description. ',' .$this->session->userdata("donorid"). ')');
+		$this->db->query('INSERT into scholarships (title, description, expiry, slots, donorid) 
+		values(' .$title. ',' .$description. ',' .$deadline. ',' .$slots. ',' .$this->session->userdata("donorid"). ')');
 		
 		$scholarshipidx = $this->db->query('Select scholarshipid from scholarships
 							order by (scholarshipid) desc
@@ -81,8 +84,29 @@ class postscholarship_model extends Base_Model {
 	
 	public function get_scholarships($donorid) {
 		//query para makuha lahat ng scholarships ng isang sponsor account
-		$results = $this->db->query('SELECT * from scholarships where donorid = ' .$donorid); 
+		$results = $this->db->query('SELECT * from scholarships where isactive AND donorid = ' .$donorid); 
 		$results = $results->result_array();
+		
+		#attach the tags to the scholarships
+		$counter = 0;
+		while($counter < sizeof($results)) {
+			$tags = $this->db->query('SELECT x.description as reqtype, getreqvalue(requirementtypeid, requirement) as reqval
+				from scholarships
+				join scholarshiprequirements using (scholarshipid) 
+				join requirementtypes x using (requirementtypeid)
+				where scholarshipid = ' .$results[$counter]['scholarshipid']);
+			$tags = $tags->result_array();
+			$results[$counter]['tags'] = $tags;
+			
+			$counter++;
+		}
+		
+		// $counter = 0;
+		// while($counter < sizeof($results)) {
+			// print_r($results[$counter]['tags']);
+			// print_r('<br>');
+			// $counter++;
+		// }
 		
 		return $results;
 	}
