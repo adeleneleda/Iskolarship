@@ -84,7 +84,7 @@
 					<br/><br/>
 					<?*/?>
 					<div class="callout border-callout">
-					<?=$indiv_feedback['firstname'].' '.$indiv_feedback['lastname']?> (<?=$indiv_feedback['name']?>) wrote on <?=$indiv_feedback['insertedon']?>:<br/>
+					<a href="<?=base_url('viewstudentdetails')?>/viewstudentinfo/<?=$indiv_feedback['studentid']?>"><?=$indiv_feedback['firstname'].' '.$indiv_feedback['lastname']?> (<?=$indiv_feedback['name']?>) </a> wrote on <?=$indiv_feedback['insertedon']?>:<br/>
 					<strong><?=$indiv_feedback['feedback']?></strong><br/>
 					<b class="border-notch notch"></b>
 					<b class="notch"></b>
