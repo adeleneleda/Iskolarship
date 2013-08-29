@@ -9,7 +9,9 @@ class searchscholarship extends CI_Controller {
 	public function index() {
 		$programs = $this->Model->get_programs();
         $yearlevels = $this->Model->get_yearlevels();
-		$this->load_view('searchscholarship_view', compact('programs', 'yearlevels'));
+		$scholarships = $this->Model->conductsearch(NULL, NULL, NULL, NULL);
+		$tag = 1;
+		$this->load_view('searchscholarship_view', compact('programs', 'yearlevels', 'scholarships', 'tag'));
 		}
 	
 	public function conductsearch() {
