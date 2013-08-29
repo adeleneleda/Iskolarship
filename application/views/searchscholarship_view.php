@@ -16,9 +16,15 @@ $(document).ready(function() {
 }); 
 
 </script>
+
+<style type="text/css">
+table { empty-cells: show; }
+</style>
+
 <div class="span12">
 <span class="pull-right">
 <a href="<?= base_url("editstudentprofile")?>" style="height:23px" class="btn btn-custom">Edit Profile</a>
+<a href="<?=base_url('viewstudentdetails')?>/viewstudentinfo/<?=$user_studentid?>" style="height:23px" class="btn btn-custom">View Public Profile</a>
 <a href="<?= base_url("poststudentfeedback")?>" style="height:23px" class="btn btn-custom">Give Scholarship Feedback</a>
 </span>
 <h2> Search scholarships </h2>
@@ -27,7 +33,7 @@ $(document).ready(function() {
 	
 	<div class="span4 well">
 	<form action="<?= base_url('searchscholarship/conductsearch') ?>" method="post">
-		<h4> Optional search tags </h4>
+		<h4> Optional filter tags </h4>
 		<table class="table">
 			<tbody>
 				<tr>
@@ -80,17 +86,21 @@ $(document).ready(function() {
 				
 				</tr>
 					<td> <label class="checkbox"><input id="income_cb" type="checkbox" name="income_cb"/>Maximum family income</label></td>
-					<td id="income_choice" style="display:none"><input id="income_input" type="text" placeholder="Max amount in Pesos" name="max_income"/> </td>
+					<td><div id="income_choice" style="display:none"><input id="income_input" type="text" placeholder="MaxAmount(PHP)" name="max_income"/></div></td>
 				<tr>
 				</tr>
 			</tbody>
 		</table>
-		<input class="btn btn-custom" type="submit" value="Search">
+		<input class="btn btn-custom" type="submit" value="Filter">
 	</form>
 	</div>
 	
 	<div class="span8 well">
-		<h4> Search results </h4>
+		<?if(isset($tag)) {?>
+			<h4> Available Scholarships </h4>
+		<?} else {?>
+			<h4> Search results </h4>
+		<?}?>
 		<table>
 			<?php
 			$counter = 0;
