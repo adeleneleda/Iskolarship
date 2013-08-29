@@ -43,7 +43,7 @@ class Viewsponsordetails_model extends Base_Model {
    }
    
    public function getscholarfeedback($donorid) {
-	$query = "SELECT title, scholarshipfeedback.insertedon, feedback, lastname, firstname, name
+	$query = "SELECT title, studentid, scholarshipfeedback.insertedon, feedback, lastname, firstname, name
    FROM scholarships join awardedscholarships using (scholarshipid)
    join scholarshipfeedback using (awardedscholarshipid)
    join students using (studentid)  join programs using (programid)  join persons using (personid) where donorid = ".$donorid." ORDER BY insertedon DESC;";
