@@ -92,11 +92,14 @@
 	<br/>
 	<h4>Specific mechanics</h4>
 	<div style="padding-left:10px">
-	<button class="btn">Download detailed mechanics</button>
+	<form method="post" action="<?= base_url('viewscholarshipdetails/downloadfile')?>">
+		<input type = "hidden" name = "filename" value = "<?=$scholarshipinfo['title']?>.pdf"/>
+		<input type = "hidden" name = "filepath" value = "<?= base_url('scholarshippdfs/'.$scholarshipid.'.pdf')?>"/>
+		<input type="submit" value = "Download detailed mechanics" class="btn"/>
+	</form>
 	</div>
 	<form method="post" action="<?= base_url('viewscholarshipdetails/applyforscholarship')?>" enctype="multipart/form-data">
 		<input type="hidden" name = "scholarshipid" value = "<?=$scholarshipid?>"/>
-		<br/>
 		<br/>
 		<h4>Attach Requirements</h4>
 		<input type="file" name="reqtfile" id="reqtfile"/>	
