@@ -68,6 +68,19 @@ class Viewscholarshipdetails extends Main_Controller {
 		$this->load_view('viewscholarshipdetails_view', compact('scholarshipinfo', 'scholarshipid'));	
 	}
 	
+	public function downloadfile() {
+	$filename = $this->input->post('filename');
+	$filepath =  $this->input->post('filepath');
+	//download.php
+	//content type
+	header('Content-type: application/pdf');
+	//open/save dialog box
+	$stringie = 'Content-Disposition: attachment; filename='.$filename;
+	header($stringie);
+	//read from server and write to buffer
+	readfile($filepath);
+	}
+	
 	
 	
 
