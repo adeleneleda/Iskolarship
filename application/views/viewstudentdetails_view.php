@@ -107,13 +107,13 @@
 			</table>
 			<div width="100%" align="center">
 				<form method="post" action="<?= base_url('viewstudentdetails/downloadfile')?>">
-					<input type = "hidden" name = "filename" value = "sample.pdf"/>
+					<input type = "hidden" name = "filename" value = "<?=implode($fullname, " ").'_CV'?>"/>
 					<input type = "hidden" name = "filepath" value = "<?= base_url('studentcvs/'.$studentid.'_cv.pdf')?>"/>
 					<input type="submit" value = "Download Student's CV" class="btn btn-large btn-custom"/>
 				</form>
 				
 				<form method="post" action="<?= base_url('viewstudentdetails/downloadcog')?>">
-					<input type = "hidden" name = "filename" value = "sample.pdf"/>
+					<input type = "hidden" name = "filename" value = "<?=implode($fullname, " ").'_COG'?>"/>
 					<input type = "hidden" name = "filepath" value = "<?= base_url('studentcopyofgrades/'.$studentid.'_copyofgrades.pdf')?>"/>
 					<input type="submit" value = "Download Student's COG" class="btn btn-large btn-custom"/>
 				</form>
