@@ -39,7 +39,8 @@ class Viewstudentdetails extends Main_Controller {
 	//content type
 	header('Content-type: application/pdf');
 	//open/save dialog box
-	header('Content-Disposition: attachment; filename=iskolarship.pdf');
+	$stringie = 'Content-Disposition: attachment; filename='.$filename;
+	header($stringie);
 	//read from server and write to buffer
 	readfile($filepath);
 	}
@@ -52,7 +53,8 @@ class Viewstudentdetails extends Main_Controller {
 	//content type
 	header('Content-type: application/pdf');
 	//open/save dialog box
-	header('Content-Disposition: attachment; filename=iskolarship_cog.pdf');
+	$stringie = 'Content-Disposition: attachment; filename='.$filename;
+	header($stringie);
 	//read from server and write to buffer
 	readfile($filepath);
 	}
