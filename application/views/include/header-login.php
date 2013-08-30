@@ -93,7 +93,7 @@
 									<li><a href="<?= base_url('home')?>" class="active">Home</a></li>
 								    <li><a href="<?= base_url('donate')?>">Donate</a></li>
 								    <li><a href="<?= base_url('success')?>">Success Stories</a></li>
-								    <li><a href="<?= base_url('aff')?>">Affiliations</a></li>
+								    <li><a href="<?= base_url('sponsors')?>">Sponsors and Affiliations</a></li>
 								    <li><a href="<?= base_url('about')?>">About</a></li>
 								</ul>
 								<ul class="nav pull-right">
