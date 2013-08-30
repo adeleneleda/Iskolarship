@@ -1,8 +1,8 @@
 <?php
 class MY_Controller extends CI_Controller
 {
-   function __construct()
+   function __construct($private, $allowedrole = -1)
    {
-      parent::__construct();
+      parent::__construct($private, $allowedrole);
    }
 }
