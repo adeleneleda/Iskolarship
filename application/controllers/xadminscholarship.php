@@ -17,7 +17,8 @@ class xadminscholarship extends CI_Controller {
 	
 	public function approve($scholarshipid) {
 		$this->Model->approveScholarship($scholarshipid);
-		$this->load_view('xadminscholarship_view', compact('scholarships'));
+		$this->index();
+		#$this->load_view('xadminscholarship_view', compact('scholarships'));
 	}	
 }
 
