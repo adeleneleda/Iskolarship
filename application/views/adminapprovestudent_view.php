@@ -28,6 +28,14 @@
                         <td><?=$studentsforapproval['description']?><br/></td>
                     </tr>
                     <tr>
+                        <td><b>Mobile Number: </b></td>
+                        <td><?=$contacts['mobilenumber']?><br/></td>
+                    </tr>
+                    <tr>
+                        <td><b>Email Address: </b></td>
+                        <td><?=$contacts['emailadd']?><br/></td>
+                    </tr>
+                    <tr>
                         <td><b>Student's Description: </b></td>
                         <td><?=$studentsforapproval['studentdescription']?><br/></td>
                     </tr>
@@ -88,7 +96,7 @@
                         </tr>
                         <tr>
                             <td><b>Reason for approval/disapproval </b></td>
-                            <td><textarea  name="approvalreason" class="span6" style="width:350px; height:93px"></textarea></td>
+                            <td><textarea  name="approvalreason" class="span6" style="width:350px; height:167px"></textarea></td>
                         </tr>
                     </table>
             </div>

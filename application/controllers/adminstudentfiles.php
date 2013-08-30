@@ -9,7 +9,8 @@ class AdminStudentFiles extends CI_Controller {
     public function display_forapproval($studentid)
     {
         $studentsforapproval = $this->Model->get_applicants($studentid);
-        $this->load_view('adminapprovestudent_view', compact('studentsforapproval', 'studentid'));
+        $contacts = $this->Model->get_contactdetails($studentid);
+        $this->load_view('adminapprovestudent_view', compact('studentsforapproval', 'studentid', 'contacts'));
     }
     
     public function downloadpicture()

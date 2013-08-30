@@ -38,6 +38,44 @@ class AdminStudentFiles_Model extends Base_Model {
 		return false;
     }
     
+    function get_contactdetails($studentid)
+    {
+        $personid = $this->db->query('SELECT personid FROM students WHERE studentid = ' . $studentid . ';');
+        $personid = $personid->result_array();
+        $personid = $personid[0]['personid'];
+        $approved = $this->db->query('SELECT isapproved from students WHERE studentid = ' . $studentid . ';');
+        $approved = $approved->result_array();
+        $approved = $approved[0]['isapproved'];
+        if($approved == 'f')
+        {
+            $contact1 = $this->db->query('SELECT contactinfo FROM contactdetails WHERE personid = ' . $personid . ' and contacttypeid = 1;');
+            $contact2 = $this->db->query('SELECT contactinfo FROM contactdetails WHERE personid = ' . $personid . ' and contacttypeid = 2;');
+            $contact2 = $contact2->result_array();
+            $results = array();
+            if($contact1->num_rows() > 0)
+            {
+                $contact1 = $contact1->result_array();
+                $results['mobilenumber'] = $contact1[0]['contactinfo'];
+            }
+            $results['emailadd'] = !empty($contact2) ? $contact2[0]['contactinfo'] : "";
+            return $results;
+        }
+        else
+        {
+            $contact1 = $this->db->query('SELECT contactinfo FROM contactdetailspending WHERE personid = ' . $personid . ' and contacttypeid = 1;');
+            $contact2 = $this->db->query('SELECT contactinfo FROM contactdetailspending WHERE personid = ' . $personid . ' and contacttypeid = 2;');
+            $contact2 = $contact2->result_array();
+            $results = array();
+            if($contact1->num_rows() > 0)
+            {
+                $contact1 = $contact1->result_array();
+                $results['mobilenumber'] = $contact1[0]['contactinfo'];
+            }
+            $results['emailadd'] = !empty($contact2) ? $contact2[0]['contactinfo'] : "";
+            return $results;
+        }
+    }
+    
     public function approve_student($studentid, $isapproved, $approvalreason)
     {
         $approve = $this->db->query('SELECT isapproved FROM students WHERE studentid = ' . $studentid .';');

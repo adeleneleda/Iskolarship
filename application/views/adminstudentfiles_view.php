@@ -10,7 +10,7 @@
                 {
                     while(!empty($studentlist[$ctr])){?>
                             <tr>
-                                <td> <a href="<?= base_url('adminstudentfiles/display_forapproval/' . $studentlist[$ctr]['studentid'])?>" > <?php echo $studentlist[$ctr]['lastname'] . ', ' . $studentlist[$ctr]['firstname']?> </a></td>
+                                <td> <a href="<?= base_url('adminstudentfiles/display_forapproval/' . $studentlist[$ctr]['studentid'])?>" > <?php echo $studentlist[$ctr]['lastname'] . ', ' . $studentlist[$ctr]['firstname'] . ' ' . $studentlist[$ctr]['middlename'] . ' ' . $studentlist[$ctr]['namesuffix']?> </a></td>
                             </tr>
                     <?php
                         $ctr++;
