@@ -71,6 +71,13 @@
 		</tr>
 		<?php } ?>
 	</table>
+	<h4>Specific mechanics</h4>
+	<div style="padding-left:10px">
+	<form method="post" action="<?= base_url('viewscholarshipdetails/downloadfile')?>">
+		<input type = "hidden" name = "filename" value = "<?=$scholarshipinfo['title']?>.pdf"/>
+		<input type = "hidden" name = "filepath" value = "<?= base_url('scholarshippdfs/'.$scholarshipid.'.pdf')?>"/>
+		<input type="submit" value = "Download detailed mechanics" class="btn"/>
+	</form></div>
 	</div>
 	</div>
 	
