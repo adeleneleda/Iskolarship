@@ -95,6 +95,7 @@
 								    <li><a href="<?= base_url('success')?>">Success Stories</a></li>
 								    <li><a href="<?= base_url('aff')?>">Affiliations</a></li>
 								    <li><a href="<?= base_url('about')?>">About</a></li>
+								    <li><a href="<?= base_url('sponsors')?>">Our Sponsors</a></li>
 								</ul>
 								<ul class="nav pull-right">
 								  <?if(empty($username)) {?>
