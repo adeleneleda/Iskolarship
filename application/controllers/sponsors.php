@@ -2,7 +2,7 @@
 
 class Sponsors extends CI_Controller {
 	public function __construct() {
-		parent::__construct();
+		parent::__construct(false);
 		$this->load->model('Sponsors_Model', 'Model');
 	}    
     public function index()
