@@ -14,10 +14,10 @@ class PostStudentFeedback extends CI_Controller {
     }
 	
 	public function submitstudentfeedback() {
-		/*$awardedscholarshipid = $this->input->post('awardedscholarshipid');
+		$awardedscholarshipid = $this->input->post('awardedscholarshipid');
 		$feedback = $this->input->post('feedback');
 		$awardedscholarshipid = $this->input->post('awardedscholarshipid');
-		$this->Model->insertfeedback($awardedscholarshipid, $feedback);*/
+		$this->Model->insertfeedback($awardedscholarshipid, $feedback);
 		redirect('poststudentfeedback');
 	}
 	
