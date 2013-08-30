@@ -2,7 +2,7 @@
 
 class EditStudentProfile extends CI_Controller {
 	public function __construct() {
-		parent::__construct();
+		parent::__construct(true, 1);
 		$this->load->model('EditStudentProfile_Model', 'Model');
 	}
     

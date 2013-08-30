@@ -34,7 +34,7 @@ class CI_Controller {
 	/**
 	 * Constructor
 	 */
-	public function __construct()
+	public function __construct($private, $allowedrole = -1)
 	{
 		self::$instance =& $this;
 		
@@ -49,6 +49,13 @@ class CI_Controller {
 		$this->load =& load_class('Loader', 'core');
 
 		$this->load->initialize();
+		
+		$username = $this->session->userdata("username");
+		$role = $this->session->userdata("role");
+		
+		if($private && empty($role) ||
+			$allowedrole == 1 && $role != "student" ||
+				$allowedrole == 2 && $role != "donor") redirect('home');
 		
 		log_message('debug', "Controller Class Initialized");
 	}

@@ -2,7 +2,7 @@
 
 class searchscholarship extends CI_Controller {
 	public function __construct() {
-		parent::__construct();
+		parent::__construct(true, 1);
 		$this->load->model('searchscholarship_model', 'Model');
 	}
 	

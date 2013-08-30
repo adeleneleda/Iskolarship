@@ -3,7 +3,7 @@
 class Viewstudentdetails extends Main_Controller {	
 
 	public function __construct() {
-		parent::__construct(true);
+		parent::__construct(false);
 		$this->load->model('Viewstudentdetails_Model', 'Model');
 	}
 	

@@ -2,7 +2,7 @@
 
 class AdminStudentFiles extends CI_Controller {
 	public function __construct() {
-		parent::__construct();
+		parent::__construct(true);
 		$this->load->model('AdminStudentFiles_Model', 'Model');
 	}
     

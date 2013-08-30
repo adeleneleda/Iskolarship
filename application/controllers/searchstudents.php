@@ -3,7 +3,7 @@
 class Searchstudents extends Main_Controller {
 
 	public function __construct() {
-		parent::__construct(true);
+		parent::__construct(true, 2);
 		$this->load->model('Searchstudents_Model', 'Model');
 	}
 

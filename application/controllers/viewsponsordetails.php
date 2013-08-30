@@ -3,7 +3,7 @@
 class Viewsponsordetails extends Main_Controller {	
 
 	public function __construct() {
-		parent::__construct(true);
+		parent::__construct(true, 1);
 		$this->load->model('Viewsponsordetails_Model', 'Model');
 	}
 	

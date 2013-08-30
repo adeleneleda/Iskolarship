@@ -2,7 +2,7 @@
 
 class postscholarship extends CI_Controller {
 	public function __construct() {
-		parent::__construct();
+		parent::__construct(true, 2);
 		$this->load->model('postscholarship_model', 'Model');
 	}
 	

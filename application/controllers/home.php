@@ -2,7 +2,7 @@
 class Home extends Main_Controller {
 
 	public function __construct() {
-		parent::__construct(true);
+		parent::__construct(false);
 		$this->load->model('Home_Model', 'Model');
 	}
 	
