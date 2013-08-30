@@ -57,7 +57,7 @@ class EditStudentProfile extends CI_Controller {
             ($_FILES["dpfile"]["type"] == "image/png") && 
             in_array($extension, $allowedExts))
         {
-            move_uploaded_file($_FILES["dpfile"]["tmp_name"], "studentprofilepictures/" . $studid . "_profilepicture." . $extension);
+            move_uploaded_file($_FILES["dpfile"]["tmp_name"], "images/stud" . $studid . "x." . $extension);
         }
             
         $this->load_view('searchscholarship_view');

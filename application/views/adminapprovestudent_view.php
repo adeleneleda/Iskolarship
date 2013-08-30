@@ -45,7 +45,7 @@
             <h3> Files for approval </h3>
                 <form method="post" action="<?= base_url('adminstudentfiles/downloadpicture')?>">
                     <input type = "hidden" name = "studno" value = "<?php echo $studentid?>"/>
-                    <input type = "hidden" name = "filepath" value = "<?= base_url('studentprofilepictures/'.$studentid.'_profilepicture.png')?>"/>
+                    <input type = "hidden" name = "filepath" value = "<?= base_url('images/stud'.$studentid.'x.jpg')?>"/>
                     <input type="submit" value = "Download Student's Picture" class="btn btn-medium btn-custom"/>
                 </form>
                 <form method="post" action="<?= base_url('adminstudentfiles/downloadcv')?>">
