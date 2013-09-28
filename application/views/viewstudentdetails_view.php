@@ -1,12 +1,12 @@
 <div class="span12" align="center">
  <?$fullname = array($studentinfo['firstname'], $studentinfo['middlename'], $studentinfo['lastname'], $studentinfo['namesuffix']);?>
 	<div class="row" style="width:95%">
-		<div class="well span5 picture" align="center" style='text-align:center; background-color:white; padding:0px; width:505px; height:50px; padding-top:340px; background-image: url("<?= base_url('images/stud'.$studentid.'x.jpg')?>")'>
+		<div class="well picture" align="center" style='text-align:center; background-color:white; padding:0px; width:505px; height:50px; padding-top:340px; background-image: url("<?= base_url('images/stud'.$studentid.'x.jpg')?>")'>
 			<div class="desc" style="padding:10px">
 			<?= $studentinfo['studentdescription']?>
 			</div>
 		</div>
-		<div class="well span5" align="center">
+		<?/*<div class="well span5" align="center">
 			<table style="width:100%; text-align:center">
 			<tr>
 			<td style="text-align:left">
@@ -61,7 +61,7 @@
 			</tr>
 			</table>
 			</form>
-		</div>
+		</div>*/?>
 		<div class="span12" style="width:91%;">
 		<br/>
 			<div style="width:80%;">
